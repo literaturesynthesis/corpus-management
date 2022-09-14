@@ -22,7 +22,7 @@ Code used to create the online presentation **Corpus management** available at:
 
 To contribute, edit the 
 [`index.Rmd`](https://github.com/literaturesynthesis/corpus-management/blob/main/index.Rmd) 
-file or individuals `Rmd` files in [`content/`](https://github.com/literaturesynthesis/corpus-management/blob/main/content/). To update the `html` presentation, run `rmarkdown::render("index.Rmd")`
+file or individual `Rmd` files in [`content/`](https://github.com/literaturesynthesis/corpus-management/blob/main/content/). To update the `html` presentation, run `rmarkdown::render("index.Rmd")`
 
 
 <br />
