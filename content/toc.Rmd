@@ -1,0 +1,35 @@
+## Table of content
+
+--
+
+### References acquisition
+
+- Web interfaces
+- File formats
+- API
+
+<!-- end -->
+
+--
+
+### References management
+
+- Software comparison
+- Focus on Zotero
+- Zotero plugins
+
+<!-- end -->
+
+--
+
+### References access
+
+- R packages `{bib2df}` & `{RSQLite}`
+
+<!-- end -->
+
+--
+
+### Remove duplicates
+
+- R package `{revtools}`
