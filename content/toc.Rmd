@@ -4,8 +4,8 @@
 
 ### References acquisition
 
-- Web interfaces
-- File formats
+- ~~Web interfaces~~
+- ~~File formats~~
 - API
 
 <!-- end -->
