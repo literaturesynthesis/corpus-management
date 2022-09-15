@@ -1,0 +1,10 @@
+class: inverse, middle, center
+
+## References management
+
+
+---
+
+## References management
+
+### ...
