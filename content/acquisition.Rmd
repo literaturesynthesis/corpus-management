@@ -1,3 +1,11 @@
+class: inverse, middle, center
+
+## References acquisition
+
+
+---
+
+
 ## References acquisition
 
 ### 1. Web interfaces

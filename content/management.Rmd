@@ -7,4 +7,50 @@ class: inverse, middle, center
 
 ## References management
 
-### ...
+### What is a References Management Software? 
+
+Enables you to:
+
+- store, organize, and annotate references
+- retrieve metadata or full text (connection to databases)
+- easily add new references (plugins for Web browsers)
+- insert in-text citations (plugins for Word, Writer, RStudio)
+- generate a bibliography
+- share libraries and collaborate (online account)
+
+--
+
+<br />
+
+Different products:
+
+- [EndNote](https://endnote.com/) (Clarivate Analytics) - Not free
+- Mendeley Desktop (Elsevier) - Not supported anymore
+- [Mendeley Reference Manager](https://www.mendeley.com/reference-management/reference-manager) (Elsevier) - The new Mendeley
+- [Zotero](https://www.zotero.org/) (open-source) - Use me!
+
+
+---
+
+## References management
+
+### Introducing...
+
+.pull-left[
+```{r echo=FALSE, out.width="95%", fig.align="center"}
+knitr::include_graphics("img/zotero-logo.png")
+```
+]
+.pull-right[
+- ...
+]
+
+
+https://fr.wikipedia.org/wiki/Zotero
+https://www.zotero.org/
+https://guides.lib.uchicago.edu/c.php?g=297307&p=1984557
+https://aut.ac.nz.libguides.com/managingreferences
+https://libguides.graduateinstitute.ch/zotero/add-ons
+https://www.zotero.org/support/plugins
+https://rstudio.github.io/visual-markdown-editing/citations.html
+https://guides.lib.virginia.edu/c.php?g=839370&p=6679995
