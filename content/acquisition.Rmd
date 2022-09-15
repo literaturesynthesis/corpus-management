@@ -1,4 +1,4 @@
-## References acquisition (WOS)
+## References acquisition
 
 ### 1. Web interfaces
 
@@ -8,7 +8,7 @@ knitr::include_graphics("img/wos-0.png")
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 1. Web interfaces
 
@@ -18,7 +18,7 @@ knitr::include_graphics("img/wos-1.png")
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 1. Web interfaces
 
@@ -28,7 +28,7 @@ knitr::include_graphics("img/wos-2.png")
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 1. Web interfaces
 
@@ -38,7 +38,7 @@ knitr::include_graphics("img/wos-3.png")
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 2. Files format
 
@@ -74,7 +74,7 @@ EF%
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 2. Files format
 
@@ -103,7 +103,7 @@ ER  -
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 2. Files format
 
@@ -125,7 +125,7 @@ ER  -
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 2. Files format
 
@@ -151,7 +151,7 @@ ER  -
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 2. Files format
 
@@ -170,7 +170,7 @@ ER  -
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 2. Files format
 
@@ -192,25 +192,142 @@ ER  -
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 3. API
 
-- ...
 
 ```{r echo=FALSE, out.width="95%", fig.align="center"}
 knitr::include_graphics("img/api-1.png")
 ```
 
+- Classical web navigation
+- Click to download file(s)
+
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 3. API
 
-- ...
 
 ```{r echo=FALSE, out.width="95%", fig.align="center"}
 knitr::include_graphics("img/api-2.png")
 ```
+
+--
+
+- Access to the raw data (JSON, XML, etc.)
+- Access using a client (implemented in R, Python, etc.)
+- Available for Web of Science, Scopus (subscription)
+- No API for Google Scholar (web scraping)
+- Some limitations:
+  - Number of records per request
+  - Number of requests per month
+  - Incomplete data (i.e. abstract)
+
+
+
+---
+
+## References acquisition
+
+### 3. API
+
+- R package [`rwoslite`](https://github.com/frbcesab/rwoslite) for the 
+[WOS Lite API](https://developer.clarivate.com/apis/woslite)
+
+
+```{r echo=FALSE, out.width="75%", fig.align="center"}
+knitr::include_graphics("img/rwoslite.png")
+```
+
+> Available at: [https://github.com/frbcesab/rwoslite/](https://github.com/frbcesab/rwoslite/)
+
+--
+
+<br />
+
+- Installation
+
+```{r eval=FALSE}
+install.packages("remotes")
+remotes::install_github("frbcesab/rwoslite")
+```
+
+> But... you need an API key !!!
+
+
+
+---
+
+## References acquisition
+
+### 3. API
+
+- Usage of `rwoslite`
+
+```{r eval=FALSE}
+## Write the query ----
+query <- 'AU=("Casajus N")'
+```
+
+--
+
+```{r eval=FALSE}
+## Get the total number of records ----
+rwoslite::wos_search(query, database = "WOS")
+## [1] 20
+```
+
+--
+
+```{r eval=FALSE}
+## Download records metadata ----
+refs <- rwoslite::wos_get_records(query, database = "WOS")
+
+dim(refs)
+## [1] 20 21
+```
+
+
+
+---
+
+## References acquisition
+
+### 3. API
+
+- Usage of `rwoslite`
+
+```{r echo=FALSE, out.width="95%", fig.align="center"}
+knitr::include_graphics("img/rwoslite-output.png")
+```
+
+--
+
+A lot of metadata, but no abstract...
+
+
+---
+
+## References acquisition
+
+### 3. API
+
+- Usage of `rwoslite`
+
+
+```{r eval=FALSE}
+## Write complex queries ----
+query <- 'TS=("Salmo salar" AND Conservation) AND PY=(2010-2021)'
+query <- "TS=salmo+salar AND TS=conservation AND PY=(2010-2021)"
+```
+
+--
+
+<br>
+
+- Export as `.csv` (BiBTeX not supported yet)
+

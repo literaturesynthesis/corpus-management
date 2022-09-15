@@ -36,18 +36,15 @@ class: right, middle, title-slide
 
 ### References acquisition
 
-- ~~Web interfaces~~
-- ~~File formats~~
-- API
-
 &lt;!-- end --&gt;
 
 --
 
 ### References management
 
+- Definition and purposes
 - Software comparison
-- Focus on Zotero
+- Zoom on Zotero
 - Zotero plugins
 
 &lt;!-- end --&gt;
@@ -69,7 +66,7 @@ class: right, middle, title-slide
 ---
 
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 1. Web interfaces
 
@@ -77,7 +74,7 @@ class: right, middle, title-slide
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 1. Web interfaces
 
@@ -85,7 +82,7 @@ class: right, middle, title-slide
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 1. Web interfaces
 
@@ -93,7 +90,7 @@ class: right, middle, title-slide
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 1. Web interfaces
 
@@ -101,7 +98,7 @@ class: right, middle, title-slide
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 2. Files format
 
@@ -137,7 +134,7 @@ EF%
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 2. Files format
 
@@ -166,7 +163,7 @@ ER  -
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 2. Files format
 
@@ -188,7 +185,7 @@ ER  -
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 2. Files format
 
@@ -214,7 +211,7 @@ ER  -
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 2. Files format
 
@@ -233,7 +230,7 @@ ER  -
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 2. Files format
 
@@ -255,24 +252,142 @@ ER  -
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 3. API
 
-- ...
 
 &lt;img src="img/api-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+- Classical web navigation
+- Click to download file(s)
 
 
 ---
 
-## References acquisition (WOS)
+## References acquisition
 
 ### 3. API
 
-- ...
 
 &lt;img src="img/api-2.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+--
+
+- Access to the raw data (JSON, XML, etc.)
+- Access using a client (implemented in R, Python, etc.)
+- Available for Web of Science, Scopus (subscription)
+- No API for Google Scholar (web scraping)
+- Some limitations:
+  - Number of records per request
+  - Number of requests per month
+  - Incomplete data (i.e. abstract)
+
+
+
+---
+
+## References acquisition
+
+### 3. API
+
+- R package [`rwoslite`](https://github.com/frbcesab/rwoslite) for the 
+[WOS Lite API](https://developer.clarivate.com/apis/woslite)
+
+
+&lt;img src="img/rwoslite.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+&gt; Available at: [https://github.com/frbcesab/rwoslite/](https://github.com/frbcesab/rwoslite/)
+
+--
+
+&lt;br /&gt;
+
+- Installation
+
+
+```r
+install.packages("remotes")
+remotes::install_github("frbcesab/rwoslite")
+```
+
+&gt; But... you need an API key !!!
+
+
+
+---
+
+## References acquisition
+
+### 3. API
+
+- Usage of `rwoslite`
+
+
+```r
+## Write the query ----
+query &lt;- 'AU=("Casajus N")'
+```
+
+--
+
+
+```r
+## Get the total number of records ----
+rwoslite::wos_search(query, database = "WOS")
+## [1] 20
+```
+
+--
+
+
+```r
+## Download records metadata ----
+refs &lt;- rwoslite::wos_get_records(query, database = "WOS")
+
+dim(refs)
+## [1] 20 21
+```
+
+
+
+---
+
+## References acquisition
+
+### 3. API
+
+- Usage of `rwoslite`
+
+&lt;img src="img/rwoslite-output.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+--
+
+A lot of metadata, but no abstract...
+
+
+---
+
+## References acquisition
+
+### 3. API
+
+- Usage of `rwoslite`
+
+
+
+```r
+## Write complex queries ----
+query &lt;- 'TS=("Salmo salar" AND Conservation) AND PY=(2010-2021)'
+query &lt;- "TS=salmo+salar AND TS=conservation AND PY=(2010-2021)"
+```
+
+--
+
+&lt;br&gt;
+
+- Export as `.csv` (BiBTeX not supported yet)
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

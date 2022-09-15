@@ -4,18 +4,15 @@
 
 ### References acquisition
 
-- ~~Web interfaces~~
-- ~~File formats~~
-- API
-
 <!-- end -->
 
 --
 
 ### References management
 
+- Definition and purposes
 - Software comparison
-- Focus on Zotero
+- Zoom on Zotero
 - Zotero plugins
 
 <!-- end -->
