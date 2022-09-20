@@ -8,7 +8,21 @@ class: inverse, middle, center
 
 ## References acquisition
 
-### 1. Web interfaces
+### Search equation
+
+`TS=("Salmo salar" AND Conservation) AND PY=(2010-2021)`
+
+
+---
+
+
+## References acquisition
+
+### Web interfaces
+
+--
+
+- Web of Science
 
 ```{r echo=FALSE, out.width="95%", fig.align="center"}
 knitr::include_graphics("img/wos-0.png")
@@ -18,7 +32,9 @@ knitr::include_graphics("img/wos-0.png")
 
 ## References acquisition
 
-### 1. Web interfaces
+### Web interfaces
+
+- Web of Science
 
 ```{r echo=FALSE, out.width="95%", fig.align="center"}
 knitr::include_graphics("img/wos-1.png")
@@ -28,7 +44,9 @@ knitr::include_graphics("img/wos-1.png")
 
 ## References acquisition
 
-### 1. Web interfaces
+### Web interfaces
+
+- Web of Science
 
 ```{r echo=FALSE, out.width="95%", fig.align="center"}
 knitr::include_graphics("img/wos-2.png")
@@ -38,7 +56,9 @@ knitr::include_graphics("img/wos-2.png")
 
 ## References acquisition
 
-### 1. Web interfaces
+### Web interfaces
+
+- Web of Science
 
 ```{r echo=FALSE, out.width="95%", fig.align="center"}
 knitr::include_graphics("img/wos-3.png")
@@ -48,7 +68,7 @@ knitr::include_graphics("img/wos-3.png")
 
 ## References acquisition
 
-### 2. Files format
+### Files format
 
 - Plain text (`.txt`)
 
@@ -84,7 +104,7 @@ EF%
 
 ## References acquisition
 
-### 2. Files format
+### Files format
 
 - RIS format (`.ris`)
 
@@ -113,9 +133,9 @@ ER  -
 
 ## References acquisition
 
-### 2. Files format
+### Files format
 
-- BiBTeX format (`.bib`)
+- BibTeX format (`.bib`)
 
 ```latex
 @article{WOS:000274813800001,
@@ -135,9 +155,9 @@ ER  -
 
 ## References acquisition
 
-### 2. Files format
+### Files format
 
-- BiBTeX Article
+- BibTeX Article
 
 ```latex
 @article{mouillot2021,
@@ -161,9 +181,9 @@ ER  -
 
 ## References acquisition
 
-### 2. Files format
+### Files format
 
-- BiBTeX Book
+- BibTeX Book
 
 ```latex
 @book{berteaux2014,
@@ -180,9 +200,9 @@ ER  -
 
 ## References acquisition
 
-### 2. Files format
+### Files format
 
-- BiBTeX Book Chapter
+- BibTeX Book Chapter
 
 ```latex
 @incollection{buisson2010,
@@ -197,13 +217,19 @@ ER  -
 }
 ```
 
+<br>
+
+--
+
+- Resources: [https://www.bibtex.com](https://www.bibtex.com)
 
 ---
 
 ## References acquisition
 
-### 3. API
+### API
 
+--
 
 ```{r echo=FALSE, out.width="95%", fig.align="center"}
 knitr::include_graphics("img/api-1.png")
@@ -217,7 +243,7 @@ knitr::include_graphics("img/api-1.png")
 
 ## References acquisition
 
-### 3. API
+### API
 
 
 ```{r echo=FALSE, out.width="95%", fig.align="center"}
@@ -241,7 +267,7 @@ knitr::include_graphics("img/api-2.png")
 
 ## References acquisition
 
-### 3. API
+### API
 
 - R package [`rwoslite`](https://github.com/frbcesab/rwoslite) for the 
 [WOS Lite API](https://developer.clarivate.com/apis/woslite)
@@ -272,7 +298,7 @@ remotes::install_github("frbcesab/rwoslite")
 
 ## References acquisition
 
-### 3. API
+### API
 
 - Usage of `rwoslite`
 
@@ -305,7 +331,7 @@ dim(refs)
 
 ## References acquisition
 
-### 3. API
+### API
 
 - Usage of `rwoslite`
 
@@ -322,7 +348,7 @@ A lot of metadata, but no abstract...
 
 ## References acquisition
 
-### 3. API
+### API
 
 - Usage of `rwoslite`
 
@@ -337,5 +363,5 @@ query <- "TS=salmo+salar AND TS=conservation AND PY=(2010-2021)"
 
 <br>
 
-- Export as `.csv` (BiBTeX not supported yet)
+- Export as `.csv` (BibTeX not supported yet)
 

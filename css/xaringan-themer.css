@@ -158,6 +158,7 @@ table.dataTable tbody {
   background-color: #e1ddc0;
   color: #49847b;
 }
+/*
 table.dataTable.display tbody tr.odd {
   background-color: #e1ddc0;
 }
@@ -167,6 +168,7 @@ table.dataTable.display tbody tr.even {
 table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.5);
 }
+*/
 .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
   color: #49847b;
 }
@@ -187,4 +189,4 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 
 hr{border: 1px solid #91902F;border-radius: 0px;}
 
-.emph{color:#909025;}
+.emph{color:#C5893F;}

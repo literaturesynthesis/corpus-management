@@ -4,6 +4,8 @@
     <title> Corpus management</title>
     <meta charset="utf-8" />
     <script src="libs/header-attrs-2.16/header-attrs.js"></script>
+    <link href="libs/font-awesome-6.1.1/css/all.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome-6.1.1/css/v4-shims.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/xaringan-themer.css" type="text/css" />
     <link rel="stylesheet" href="css/custom.css" type="text/css" />
   </head>
@@ -36,20 +38,7 @@ class: right, middle, title-slide
 
 ### References acquisition
 
-&lt;!-- end --&gt;
-
---
-
 ### References management
-
-- Definition and purposes
-- Software comparison
-- Zoom on Zotero
-- Zotero plugins
-
-&lt;!-- end --&gt;
-
---
 
 ### References access
 
@@ -57,7 +46,6 @@ class: right, middle, title-slide
 
 &lt;!-- end --&gt;
 
---
 
 ### Remove duplicates
 
@@ -76,7 +64,21 @@ class: inverse, middle, center
 
 ## References acquisition
 
-### 1. Web interfaces
+### Search equation
+
+`TS=("Salmo salar" AND Conservation) AND PY=(2010-2021)`
+
+
+---
+
+
+## References acquisition
+
+### Web interfaces
+
+--
+
+- Web of Science
 
 &lt;img src="img/wos-0.png" width="95%" style="display: block; margin: auto;" /&gt;
 
@@ -84,7 +86,9 @@ class: inverse, middle, center
 
 ## References acquisition
 
-### 1. Web interfaces
+### Web interfaces
+
+- Web of Science
 
 &lt;img src="img/wos-1.png" width="95%" style="display: block; margin: auto;" /&gt;
 
@@ -92,7 +96,9 @@ class: inverse, middle, center
 
 ## References acquisition
 
-### 1. Web interfaces
+### Web interfaces
+
+- Web of Science
 
 &lt;img src="img/wos-2.png" width="95%" style="display: block; margin: auto;" /&gt;
 
@@ -100,7 +106,9 @@ class: inverse, middle, center
 
 ## References acquisition
 
-### 1. Web interfaces
+### Web interfaces
+
+- Web of Science
 
 &lt;img src="img/wos-3.png" width="95%" style="display: block; margin: auto;" /&gt;
 
@@ -108,7 +116,7 @@ class: inverse, middle, center
 
 ## References acquisition
 
-### 2. Files format
+### Files format
 
 - Plain text (`.txt`)
 
@@ -144,7 +152,7 @@ EF%
 
 ## References acquisition
 
-### 2. Files format
+### Files format
 
 - RIS format (`.ris`)
 
@@ -173,9 +181,9 @@ ER  -
 
 ## References acquisition
 
-### 2. Files format
+### Files format
 
-- BiBTeX format (`.bib`)
+- BibTeX format (`.bib`)
 
 ```latex
 @article{WOS:000274813800001,
@@ -195,9 +203,9 @@ ER  -
 
 ## References acquisition
 
-### 2. Files format
+### Files format
 
-- BiBTeX Article
+- BibTeX Article
 
 ```latex
 @article{mouillot2021,
@@ -221,9 +229,9 @@ ER  -
 
 ## References acquisition
 
-### 2. Files format
+### Files format
 
-- BiBTeX Book
+- BibTeX Book
 
 ```latex
 @book{berteaux2014,
@@ -240,9 +248,9 @@ ER  -
 
 ## References acquisition
 
-### 2. Files format
+### Files format
 
-- BiBTeX Book Chapter
+- BibTeX Book Chapter
 
 ```latex
 @incollection{buisson2010,
@@ -257,13 +265,19 @@ ER  -
 }
 ```
 
+&lt;br&gt;
+
+--
+
+- Resources: [https://www.bibtex.com](https://www.bibtex.com)
 
 ---
 
 ## References acquisition
 
-### 3. API
+### API
 
+--
 
 &lt;img src="img/api-1.png" width="95%" style="display: block; margin: auto;" /&gt;
 
@@ -275,7 +289,7 @@ ER  -
 
 ## References acquisition
 
-### 3. API
+### API
 
 
 &lt;img src="img/api-2.png" width="95%" style="display: block; margin: auto;" /&gt;
@@ -297,7 +311,7 @@ ER  -
 
 ## References acquisition
 
-### 3. API
+### API
 
 - R package [`rwoslite`](https://github.com/frbcesab/rwoslite) for the 
 [WOS Lite API](https://developer.clarivate.com/apis/woslite)
@@ -327,7 +341,7 @@ remotes::install_github("frbcesab/rwoslite")
 
 ## References acquisition
 
-### 3. API
+### API
 
 - Usage of `rwoslite`
 
@@ -363,7 +377,7 @@ dim(refs)
 
 ## References acquisition
 
-### 3. API
+### API
 
 - Usage of `rwoslite`
 
@@ -378,7 +392,7 @@ A lot of metadata, but no abstract...
 
 ## References acquisition
 
-### 3. API
+### API
 
 - Usage of `rwoslite`
 
@@ -394,7 +408,7 @@ query &lt;- "TS=salmo+salar AND TS=conservation AND PY=(2010-2021)"
 
 &lt;br&gt;
 
-- Export as `.csv` (BiBTeX not supported yet)
+- Export as `.csv` (BibTeX not supported yet)
 
 
 ---
@@ -404,12 +418,13 @@ class: inverse, middle, center
 
 ## References management
 
-
 ---
 
 ## References management
 
-### What is a References Management Software? 
+### What is a References Management Software?
+
+--
 
 Enables you to:
 
@@ -429,8 +444,26 @@ Different products:
 - [EndNote](https://endnote.com/) (Clarivate Analytics) - Not free
 - Mendeley Desktop (Elsevier) - Not supported anymore
 - [Mendeley Reference Manager](https://www.mendeley.com/reference-management/reference-manager) (Elsevier) - The new Mendeley
-- [Zotero](https://www.zotero.org/) (open-source) - Use me!
+- [Zotero](https://www.zotero.org/) (open-source) - Pick me!
 
+---
+
+## References management
+
+### Quick comparison
+
+&lt;br&gt;
+
+|                   |                 [`EndNote`](https://endnote.com/)                 |           [`Mendeley`](https://www.mendeley.com/reference-management/reference-manager)            |                                [`Zotero`](https://www.zotero.org/)                                 |
+|:----------------:|:----------------------:|:----------------:|:------------------:|
+|       `OS`        | <i class="fab fa-windows" role="presentation" aria-label="windows icon"></i>   <i class="fab fa-apple" role="presentation" aria-label="apple icon"></i> | <i class="fab fa-windows" role="presentation" aria-label="windows icon"></i>   <i class="fab fa-apple" role="presentation" aria-label="apple icon"></i>   <i class="fab fa-linux" role="presentation" aria-label="linux icon"></i> | <i class="fab fa-windows" role="presentation" aria-label="windows icon"></i>   <i class="fab fa-apple" role="presentation" aria-label="apple icon"></i>   <i class="fab fa-linux" role="presentation" aria-label="linux icon"></i> |
+|     `License`     |                    Proprietary&lt;br&gt;(Clarivate)                     |                                     Proprietary&lt;br&gt;(Elsevier)                                      |                                       Open source&lt;br&gt;(AGPL)                                        |
+|     `Pricing`     |                             \&gt; 200 \$                             |                                                Free                                                |                                                Free                                                |
+| `Online storage`  |                    2GB&lt;br&gt;(+ pricing options)                     |                                     2GB&lt;br&gt;(+ pricing options)                                     |                                   300 MB&lt;br&gt;(+ pricing options)                                    |
+| `Citation styles` |                              \&gt; 7000                              |                                              \&gt; 7000                                               |                                             \&gt; 10,000                                              |
+|   `Google Doc`    |        <i class="fa fa-xmark non-valid" role="presentation" aria-label="xmark icon"></i>        |                        <i class="fa fa-xmark non-valid" role="presentation" aria-label="xmark icon"></i>                         |                          <i class="fa fa-check valid" role="presentation" aria-label="check icon"></i>                           |
+|      `LaTeX`      |        <i class="fa fa-xmark non-valid" role="presentation" aria-label="xmark icon"></i>        |                          <i class="fa fa-check valid" role="presentation" aria-label="check icon"></i>                           |                          <i class="fa fa-check valid" role="presentation" aria-label="check icon"></i>                           |
+|  `Customization`  |        <i class="fa fa-xmark non-valid" role="presentation" aria-label="xmark icon"></i>        |                        <i class="fa fa-xmark non-valid" role="presentation" aria-label="xmark icon"></i>                         |                          <i class="fa fa-check valid" role="presentation" aria-label="check icon"></i>                           |
 
 ---
 
@@ -438,12 +471,112 @@ Different products:
 
 ### Introducing...
 
-.pull-left[
-&lt;img src="img/zotero-logo.png" width="95%" style="display: block; margin: auto;" /&gt;
+.pull-left-2[
+&lt;img src="img/zotero-logo.png" width="100%" style="display: block; margin: auto;" /&gt;
 ]
-.pull-right[
-- ...
+
+.pull-right-2[
+&lt;img src="img/zotero-ui.png" width="100%" style="display: block; margin: auto;" /&gt;
 ]
+
+- [`Open source`](https://github.com/zotero/zotero) and free
+- [`Well documented`](https://www.zotero.org/support/) and active [`community`](https://forums.zotero.org/discussions)
+- [`Web browser`](https://www.zotero.org/download/connectors) and [`Word processor`](https://www.zotero.org/support/word_processor_integration) connectors
+- A lot of [`plugins`](https://www.zotero.org/support/plugins) and [`styles`](https://www.zotero.org/styles)
+- Support for LaTeX, BibTeX, and [`RStudio`](https://rstudio.github.io/visual-markdown-editing/citations.html)
+
+---
+
+## References management
+
+### Zotero plugins
+
+--
+
+- `Zotero connector`&lt;br&gt; .small[&lt;https://www.zotero.org/download/connectors&gt;]
+
+  - Available for the most popular Web browsers:  
+  &amp;nbsp; <i class="fab fa-firefox-browser" role="presentation" aria-label="firefox-browser icon"></i>
+  &amp;nbsp; <i class="fab fa-chrome" role="presentation" aria-label="chrome icon"></i>
+  &amp;nbsp; <i class="fab fa-safari" role="presentation" aria-label="safari icon"></i>
+  &amp;nbsp; <i class="fab fa-edge" role="presentation" aria-label="edge icon"></i>
+  - Add items to your Zotero library in one click
+  - Add PDF (if open access)
+
+--
+
+- `Word processor plugin`&lt;br&gt; .small[&lt;https://www.zotero.org/support/word_processor_integration&gt;]
+
+  - Available for `Microsoft Word`, `LibreOffice Writer` and `Google Doc`
+  - Insert in-text citations
+  - Generate bibliography according to a selected style
+
+--
+
+- Citation picker for text editors
+
+  - [`zotero-citations`](https://atom.io/packages/zotero-citations) for Atom
+  - [`Citation Picker for Zotero`](https://marketplace.visualstudio.com/items?itemName=mblode.zotero) for Visual Studio Code (and VS Codium)
+
+---
+
+## References management
+
+### Zotero plugins
+
+&lt;https://www.zotero.org/support/plugins&gt;
+
+&lt;br&gt;
+
+--
+
+- `Better BibTeX`&lt;br&gt; .small[&lt;https://retorque.re/zotero-better-BibTeX/&gt;]
+
+  - Improve the compatibility with LaTeX, Markdown, and R
+  - Auto-generate citation keys
+  - Auto-export BibTeX files (one file per collection)
+
+&lt;br&gt;
+
+--
+
+- `ZotFile`&lt;br&gt; .small[&lt;http://zotfile.com/&gt;]
+
+  - Rename attachments (with a lot of naming rules)
+  - Move attachments (to a specific location)
+
+
+---
+
+## References management
+
+### Zotero and RStudio
+
+&lt;img src="img/zotero-rstudio.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+&lt;br&gt;
+
+- Require a recent version of [`RStudio`](https://www.rstudio.com/products/rstudio/)
+- Edit R Markdown file using the Visual Markdown Editing Mode
+- Easily insert in-text citations
+- Auto-generate BibTex file
+
+.small[&lt;https://rstudio.github.io/visual-markdown-editing/citations.html&gt;]
+
+---
+
+
+class: inverse, middle, center
+
+## References access
+
+
+---
+
+## References access
+
+### ...
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

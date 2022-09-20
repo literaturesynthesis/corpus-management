@@ -29,3 +29,18 @@ a.email{font-size:0.85em; color: #9f9a9a; font-weight:100;}
 .github .fa-github:hover{color:#697c89;}
 .figure{text-align:center}
 .caption{font-size: 0.5em;}
+
+.valid{color:green;}
+.non-valid{color:red;}
+
+.remark-slide table {font-size:0.95em;}
+
+.remark-slide table thead th {background-color:#3F3F3F;border-bottom:1px solid #666;}
+/*
+.remark-slide table tbody tr td {border-bottom:1px solid #666;}
+.remark-slide table tbody tr td {background-color:#3F3F3F;color:#C5893F;}
+.remark-slide table tbody col:first-child {background-color:#3F3F3F;color:red;}
+*/
+
+.remark-slide thead, .remark-slide tfoot, .remark-slide tr:nth-child(even) { background: #3F3F3F }
+.remark-slide col:first-child { font-weight:bold; }
