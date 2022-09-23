@@ -1,18 +1,16 @@
 ## Table of content
 
---
 
 ### References acquisition
 
+<br>
+
 ### References management
+
+<br>
 
 ### References access
 
-- R packages `{bib2df}` & `{RSQLite}`
-
-<!-- end -->
-
+<br>
 
 ### Remove duplicates
-
-- R package `{revtools}`

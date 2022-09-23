@@ -1,7 +1,19 @@
-class: inverse, middle, center
+## Table of content
 
-## References acquisition
 
+### References acquisition
+
+<br>
+
+### .greyish[References management]
+
+<br>
+
+### .greyish[References access]
+
+<br>
+
+### .greyish[Remove duplicates]
 
 ---
 
@@ -72,7 +84,7 @@ knitr::include_graphics("img/wos-3.png")
 
 - Plain text (`.txt`)
 
-```latex
+```{latex}
 FN Clarivate Analytics Web of Science
 VR 1.0
 PT J
@@ -281,7 +293,6 @@ knitr::include_graphics("img/rwoslite.png")
 
 --
 
-<br />
 
 - Installation
 
@@ -335,6 +346,11 @@ dim(refs)
 
 - Usage of `rwoslite`
 
+```{r eval=FALSE}
+## Preview of records ----
+View(refs)
+```
+
 ```{r echo=FALSE, out.width="95%", fig.align="center"}
 knitr::include_graphics("img/rwoslite-output.png")
 ```
@@ -365,3 +381,8 @@ query <- "TS=salmo+salar AND TS=conservation AND PY=(2010-2021)"
 
 - Export as `.csv` (BibTeX not supported yet)
 
+
+```{r eval=FALSE}
+## Export records ----
+write.csv(refs, "path/to/filename.csv", row.names = FALSE)
+```

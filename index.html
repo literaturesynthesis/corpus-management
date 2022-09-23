@@ -34,30 +34,40 @@ class: right, middle, title-slide
 
 ## Table of content
 
---
 
 ### References acquisition
 
+&lt;br&gt;
+
 ### References management
+
+&lt;br&gt;
 
 ### References access
 
-- R packages `{bib2df}` &amp; `{RSQLite}`
-
-&lt;!-- end --&gt;
-
+&lt;br&gt;
 
 ### Remove duplicates
-
-- R package `{revtools}`
 
 ---
 
 
-class: inverse, middle, center
+## Table of content
 
-## References acquisition
 
+### References acquisition
+
+&lt;br&gt;
+
+### .greyish[References management]
+
+&lt;br&gt;
+
+### .greyish[References access]
+
+&lt;br&gt;
+
+### .greyish[Remove duplicates]
 
 ---
 
@@ -119,6 +129,7 @@ class: inverse, middle, center
 ### Files format
 
 - Plain text (`.txt`)
+
 
 ```latex
 FN Clarivate Analytics Web of Science
@@ -323,7 +334,6 @@ ER  -
 
 --
 
-&lt;br /&gt;
 
 - Installation
 
@@ -381,6 +391,12 @@ dim(refs)
 
 - Usage of `rwoslite`
 
+
+```r
+## Preview of records ----
+View(refs)
+```
+
 &lt;img src="img/rwoslite-output.png" width="95%" style="display: block; margin: auto;" /&gt;
 
 --
@@ -411,12 +427,31 @@ query &lt;- "TS=salmo+salar AND TS=conservation AND PY=(2010-2021)"
 - Export as `.csv` (BibTeX not supported yet)
 
 
+
+```r
+## Export records ----
+write.csv(refs, "path/to/filename.csv", row.names = FALSE)
+```
+
 ---
 
 
-class: inverse, middle, center
+## Table of content
 
-## References management
+
+### .greyish[References acquisition]
+
+&lt;br&gt;
+
+### References management
+
+&lt;br&gt;
+
+### .greyish[References access]
+
+&lt;br&gt;
+
+### .greyish[Remove duplicates]
 
 ---
 
@@ -458,8 +493,8 @@ Different products:
 |:----------------:|:----------------------:|:----------------:|:------------------:|
 |       `OS`        | <i class="fab fa-windows" role="presentation" aria-label="windows icon"></i>   <i class="fab fa-apple" role="presentation" aria-label="apple icon"></i> | <i class="fab fa-windows" role="presentation" aria-label="windows icon"></i>   <i class="fab fa-apple" role="presentation" aria-label="apple icon"></i>   <i class="fab fa-linux" role="presentation" aria-label="linux icon"></i> | <i class="fab fa-windows" role="presentation" aria-label="windows icon"></i>   <i class="fab fa-apple" role="presentation" aria-label="apple icon"></i>   <i class="fab fa-linux" role="presentation" aria-label="linux icon"></i> |
 |     `License`     |                    Proprietary&lt;br&gt;(Clarivate)                     |                                     Proprietary&lt;br&gt;(Elsevier)                                      |                                       Open source&lt;br&gt;(AGPL)                                        |
-|     `Pricing`     |                             \&gt; 200 \$                             |                                                Free                                                |                                                Free                                                |
-| `Online storage`  |                    2GB&lt;br&gt;(+ pricing options)                     |                                     2GB&lt;br&gt;(+ pricing options)                                     |                                   300 MB&lt;br&gt;(+ pricing options)                                    |
+|     `Pricing`     |                             \&gt; 200 $                             |                                                Free                                                |                                                Free                                                |
+| `Online storage`  |                    2 GB&lt;br&gt;(+ pricing options)                     |                                     2 GB&lt;br&gt;(+ pricing options)                                     |                                   300 MB&lt;br&gt;(+ pricing options)                                    |
 | `Citation styles` |                              \&gt; 7000                              |                                              \&gt; 7000                                               |                                             \&gt; 10,000                                              |
 |   `Google Doc`    |        <i class="fa fa-xmark non-valid" role="presentation" aria-label="xmark icon"></i>        |                        <i class="fa fa-xmark non-valid" role="presentation" aria-label="xmark icon"></i>                         |                          <i class="fa fa-check valid" role="presentation" aria-label="check icon"></i>                           |
 |      `LaTeX`      |        <i class="fa fa-xmark non-valid" role="presentation" aria-label="xmark icon"></i>        |                          <i class="fa fa-check valid" role="presentation" aria-label="check icon"></i>                           |                          <i class="fa fa-check valid" role="presentation" aria-label="check icon"></i>                           |
@@ -566,17 +601,303 @@ Different products:
 ---
 
 
+## Table of content
+
+
+### .greyish[References acquisition]
+
+&lt;br&gt;
+
+### .greyish[References management]
+
+&lt;br&gt;
+
+### References access
+
+&lt;br&gt;
+
+### .greyish[Remove duplicates]
+
+---
+
 class: inverse, middle, center
 
+## On the side
+
+---
+
+## Bibliography with R Markdown
+
+--
+
+**What do you need?**
+
+- The R packages [`rmarkdown`](https://rmarkdown.rstudio.com/) and [`tinytex`](https://yihui.org/tinytex/) (for PDF output)
+- The software [`Pandoc`](https://pandoc.org/installing.html)
+
+--
+
+&lt;br&gt;
+
+and the following files structure:
+
+
+```txt
+.
+├── index.Rmd               # Main Rmd document
+├── references/
+│   └── references.bib      # A list of references (BibTeX) [exported from Zotero]
+└── styles/
+    └── style.csl           # A bibliography style (CSL) [https://www.zotero.org/styles]
+```
+
+
+---
+
+## Bibliography with R Markdown
+
+.pull-left[
+
+```yaml
+---
+title: 'Title of my article'
+author: 'N. Casajus'
+date: 'October 2022'
+output: pdf_document
+documentclass: article
+classoption: a4paper
+bibliography: 'references/references.bib'
+csl: 'styles/style.csl'
+---
+
+Lorem ipsum dolor sit amet, consectetur adipis
+elit, sed do eiusmod tempor incididunt ut labo
+dolore magna aliqua. Ut enim ad minim veniam, 
+nostrud exercitation ullamco laboris nisi ut 
+consequat [@Ballesteros2020; @Basset2017]. 
+
+@Decaens2021 aute irure dolor in reprehenderit
+
+# Bibliography
+```
+]
+
+--
+
+.pull-right[
+&lt;img src="img/cited-biblio-pdf.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+
+---
+
+## Bibliography with R Markdown
+
+.pull-left[
+
+```yaml
+---
+title: 'Annexe A - Bibliography'
+output: pdf_document
+documentclass: article
+classoption: a4paper
+bibliography: 'references/references.bib'
+csl: 'styles/style.csl'
+nocite: '@*'
+---
+```
+]
+
+--
+
+.pull-right[
+&lt;img src="img/biblio-pdf.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+.small[`nocite: '@*'` will create a bibliography with all references listed in 
+`references/references.bib` without any in-text citation - Ideal for an appendix!]
+
+
+---
+
+class: inverse, middle, center
+
+## Back on topic
+
+---
+
 ## References access
+
+--
+
+### Option 1 - SQL query
+
+Zotero stores references data in an [`SQLite`](https://www.sqlite.org) database
+
+
+--
+
+### Option 2 - Zotero API
+
+.small[&lt;https://www.zotero.org/support/dev/web_api/v3/start&gt;]
+
+Zotero provides an API to access online data (including public groups)
+
+--
+
+### Option 3 - Export .csv from Zotero
+
+Maybe not a good choice...
+
+--
+
+### Option 4 - Import BibTeX
+
+Directly read `.bib` files in <i class="fab fa-r-project" role="presentation" aria-label="r-project icon"></i>
+
+<i class="fa fa-hand-point-right" role="presentation" aria-label="hand-point-right icon"></i>&amp;nbsp; R package [`rbibtools`](https://github.com/frbcesab/rbibtools)
 
 
 ---
 
 ## References access
 
-### ...
 
+### Read `.bib` files in <i class="fab fa-r-project" role="presentation" aria-label="r-project icon"></i>
+
+- R package [`rbibtools`](https://github.com/frbcesab/rbibtools)
+
+
+&lt;img src="img/rbibtools.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+&gt; Available at: &lt;https://github.com/frbcesab/rbibtools/&gt;
+
+--
+
+
+- Installation
+
+
+```r
+install.packages("remotes")
+remotes::install_github("frbcesab/rbibtools")
+```
+
+
+---
+
+## References access
+
+
+### Read `.bib` files in <i class="fab fa-r-project" role="presentation" aria-label="r-project icon"></i>
+
+- Usage of [`rbibtools`](https://github.com/frbcesab/rbibtools)
+
+
+
+
+```r
+## Read .bib file(s) ----
+refs &lt;- rbibtools::read_bibtex(path = "data/")
+```
+
+
+---
+
+## References access
+
+
+### Read `.bib` files in <i class="fab fa-r-project" role="presentation" aria-label="r-project icon"></i>
+
+- Usage of `rbibtools`
+
+&lt;img src="img/rbibtools-output.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+## References access
+
+
+### Read `.bib` files in <i class="fab fa-r-project" role="presentation" aria-label="r-project icon"></i>
+
+- Usage of `rbibtools`
+
+
+Additional parameters of `rbibtools::read_bibtex()`:
+
+  - `tags`: select BibTeX fields (e.g. authors, title, keywords, etc.)
+  - `categories`: filter references types (e.g. article, book, chapter, etc.)
+
+&lt;br&gt;
+
+See [`?rbibtools::read_bibtex`](https://frbcesab.github.io/rbibtools/reference/read_bibtex.html) for further information
+
+---
+
+
+## Table of content
+
+
+### .greyish[References acquisition]
+
+&lt;br&gt;
+
+### .greyish[References management]
+
+&lt;br&gt;
+
+### .greyish[References access]
+
+&lt;br&gt;
+
+### Remove duplicates
+
+
+---
+
+
+## Remove duplicates
+
+
+### Deduplication
+
+
+.pull-left-2[
+&lt;img src="img/revtools-hex.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right-2[
+- An R package to work on evidence synthesis
+- Can be used for `deduplication` and `screening`
+- Can be also used to import `.bib` files, but...
+
+&lt;!-- end --&gt;
+
+- Available at: &lt;https://revtools.net/&gt;
+]
+
+--
+
+To detect duplicates, you can use the function [`revtools::find_duplicates()`](https://revtools.net/deduplication.html) 
+
+<i class="fa fa-hand-point-right" role="presentation" aria-label="hand-point-right icon"></i>&amp;nbsp; By default, detect duplicates based on the DOI (can be changed)
+
+&lt;br&gt;
+
+--
+
+A ShinyApp is also available with [`revtools::screen_duplicates()`](https://revtools.net/deduplication.html#screening-duplicates)
+
+--
+
+<i class="fa fa-hand-point-right" role="presentation" aria-label="hand-point-right icon"></i>&amp;nbsp; Duplicated references will have the same ID (no deletion)
+
+---
+
+## Wrap-up
+
+&lt;img src="img/wrap-up.png" width="100%" style="display: block; margin: auto;" /&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
