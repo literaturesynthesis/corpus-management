@@ -1,0 +1,70 @@
+class: inverse, middle, center
+
+## Exercise
+
+---
+
+### Exercise
+
+1. Download the two following `.bib` files:
+  
+  .small[`r fontawesome::fa_i("circle-arrow-right")`&nbsp; <https://raw.githubusercontent.com/literaturesynthesis/corpus-management/main/data/exercise/refs-scopus.bib>]
+  <br/ >
+  .small[`r fontawesome::fa_i("circle-arrow-right")`&nbsp; <https://raw.githubusercontent.com/literaturesynthesis/corpus-management/main/data/exercise/refs-webofscience.bib>]
+
+2. Import the two `.bib` files in Zotero
+
+  .small[`r fontawesome::fa_i("lightbulb")`&nbsp; Create one collection per file (source)]
+
+3. Export two new `.bib` files from Zotero
+
+4. Import the new `.bib` files in `r fontawesome::fa_i("r-project")`
+
+  .small[`r fontawesome::fa_i("lightbulb")`&nbsp; Use the package `rbibtools`: <https://github.com/frbcesab/rbibtools>]
+  
+5. Detect duplicated references
+  
+  .small[`r fontawesome::fa_i("lightbulb")`&nbsp; Use the package `revtools`: <https://revtools.net/>]
+
+6. Export the final table
+
+  .small[`r fontawesome::fa_i("lightbulb")`&nbsp; Use the package `writexl`: <https://cran.r-project.org/package=writexl>]
+
+---
+
+
+### Correction
+
+```{r eval=FALSE}
+## Folder to save .bib files ----
+
+path <- file.path("~", "Documents", "Demo")
+dir.create(path, recursive = TRUE)
+
+
+## Download .bib files ----
+
+repo_url   <- paste0("https://raw.githubusercontent.com/literaturesynthesis/", 
+                     "corpus-management/main/data/exercise/")
+
+filename_1 <- "refs-scopus.bib"
+filename_2 <- "refs-webofscience.bib"
+
+download.file(url = paste0(repo_url, filename_1), destfile = file.path(path, filename_1))
+download.file(url = paste0(repo_url, filename_2), destfile = file.path(path, filename_2))
+
+
+## Import .bib files ----
+
+refs <- rbibtools::read_bibtex(path)
+
+
+## Detect duplicates (based on DOI) ----
+
+refs$"unique_id" <- revtools::find_duplicates(refs)
+
+
+## Create .xlsx file ----
+
+writexl::write_xlsx(refs, file.path(path, "unique_references.xlsx"))
+```

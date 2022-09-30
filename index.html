@@ -901,6 +901,81 @@ A ShinyApp is also available with [`revtools::screen_duplicates()`](https://revt
 ## Wrap-up
 
 &lt;img src="img/wrap-up.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+class: inverse, middle, center
+
+## Exercise
+
+---
+
+### Exercise
+
+1. Download the two following `.bib` files:
+  
+  .small[<i class="fa fa-circle-arrow-right" role="presentation" aria-label="circle-arrow-right icon"></i>&amp;nbsp; &lt;https://raw.githubusercontent.com/literaturesynthesis/corpus-management/main/data/exercise/refs-scopus.bib&gt;]
+  &lt;br/ &gt;
+  .small[<i class="fa fa-circle-arrow-right" role="presentation" aria-label="circle-arrow-right icon"></i>&amp;nbsp; &lt;https://raw.githubusercontent.com/literaturesynthesis/corpus-management/main/data/exercise/refs-webofscience.bib&gt;]
+
+2. Import the two `.bib` files in Zotero
+
+  .small[<i class="fa fa-lightbulb" role="presentation" aria-label="lightbulb icon"></i>&amp;nbsp; Create one collection per file (source)]
+
+3. Export two new `.bib` files from Zotero
+
+4. Import the new `.bib` files in <i class="fab fa-r-project" role="presentation" aria-label="r-project icon"></i>
+
+  .small[<i class="fa fa-lightbulb" role="presentation" aria-label="lightbulb icon"></i>&amp;nbsp; Use the package `rbibtools`: &lt;https://github.com/frbcesab/rbibtools&gt;]
+  
+5. Detect duplicated references
+  
+  .small[<i class="fa fa-lightbulb" role="presentation" aria-label="lightbulb icon"></i>&amp;nbsp; Use the package `revtools`: &lt;https://revtools.net/&gt;]
+
+6. Export the final table
+
+  .small[<i class="fa fa-lightbulb" role="presentation" aria-label="lightbulb icon"></i>&amp;nbsp; Use the package `writexl`: &lt;https://cran.r-project.org/package=writexl&gt;]
+
+---
+
+
+### Correction
+
+
+```r
+## Folder to save .bib files ----
+
+path &lt;- file.path("~", "Documents", "Demo")
+dir.create(path, recursive = TRUE)
+
+
+## Download .bib files ----
+
+repo_url   &lt;- paste0("https://raw.githubusercontent.com/literaturesynthesis/", 
+                     "corpus-management/main/data/exercise/")
+
+filename_1 &lt;- "refs-scopus.bib"
+filename_2 &lt;- "refs-webofscience.bib"
+
+download.file(url = paste0(repo_url, filename_1), destfile = file.path(path, filename_1))
+download.file(url = paste0(repo_url, filename_2), destfile = file.path(path, filename_2))
+
+
+## Import .bib files ----
+
+refs &lt;- rbibtools::read_bibtex(path)
+
+
+## Detect duplicates (based on DOI) ----
+
+refs$"unique_id" &lt;- revtools::find_duplicates(refs)
+
+
+## Create .xlsx file ----
+
+writexl::write_xlsx(refs, file.path(path, "unique_references.xlsx"))
+```
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

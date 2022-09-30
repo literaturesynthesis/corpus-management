@@ -45,3 +45,8 @@ output:
 
 ```{r child='content/duplicates.Rmd'}
 ```
+
+---
+
+```{r child='content/exercise.Rmd'}
+```
