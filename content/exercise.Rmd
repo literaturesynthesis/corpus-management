@@ -64,6 +64,11 @@ refs <- rbibtools::read_bib(path)
 refs$"unique_id" <- revtools::find_duplicates(refs)
 
 
+## Number of duplicates ----
+
+length(which(duplicated(refs$"unique_id")))
+
+
 ## Create .xlsx file ----
 
 writexl::write_xlsx(refs, file.path(path, "unique_references.xlsx"))
