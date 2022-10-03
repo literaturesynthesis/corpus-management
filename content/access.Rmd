@@ -193,12 +193,12 @@ remotes::install_github("frbcesab/rbibtools")
 - Usage of [`rbibtools`](https://github.com/frbcesab/rbibtools)
 
 ```{r eval=TRUE, echo=FALSE}
-refs <- suppressWarnings(rbibtools::read_bibtex(here::here("data")))
+refs <- suppressWarnings(rbibtools::read_bib(here::here("data")))
 ```
 
 ```{r eval=FALSE}
 ## Read .bib file(s) ----
-refs <- rbibtools::read_bibtex(path = "data/")
+refs <- rbibtools::read_bib(path = "data/")
 ```
 
 
@@ -226,11 +226,11 @@ knitr::include_graphics("img/rbibtools-output.png")
 - Usage of `rbibtools`
 
 
-Additional parameters of `rbibtools::read_bibtex()`:
+Additional parameters of `rbibtools::read_bib()`:
 
   - `tags`: select BibTeX fields (e.g. authors, title, keywords, etc.)
   - `categories`: filter references types (e.g. article, book, chapter, etc.)
 
 <br>
 
-See [`?rbibtools::read_bibtex`](https://frbcesab.github.io/rbibtools/reference/read_bibtex.html) for further information
+See [`?rbibtools::read_bib`](https://frbcesab.github.io/rbibtools/reference/read_bib.html) for further information

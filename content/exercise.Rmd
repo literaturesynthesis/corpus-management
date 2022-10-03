@@ -56,7 +56,7 @@ download.file(url = paste0(repo_url, filename_2), destfile = file.path(path, fil
 
 ## Import .bib files ----
 
-refs <- rbibtools::read_bibtex(path)
+refs <- rbibtools::read_bib(path)
 
 
 ## Detect duplicates (based on DOI) ----

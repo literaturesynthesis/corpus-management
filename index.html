@@ -801,7 +801,7 @@ remotes::install_github("frbcesab/rbibtools")
 
 ```r
 ## Read .bib file(s) ----
-refs &lt;- rbibtools::read_bibtex(path = "data/")
+refs &lt;- rbibtools::read_bib(path = "data/")
 ```
 
 
@@ -827,14 +827,14 @@ refs &lt;- rbibtools::read_bibtex(path = "data/")
 - Usage of `rbibtools`
 
 
-Additional parameters of `rbibtools::read_bibtex()`:
+Additional parameters of `rbibtools::read_bib()`:
 
   - `tags`: select BibTeX fields (e.g. authors, title, keywords, etc.)
   - `categories`: filter references types (e.g. article, book, chapter, etc.)
 
 &lt;br&gt;
 
-See [`?rbibtools::read_bibtex`](https://frbcesab.github.io/rbibtools/reference/read_bibtex.html) for further information
+See [`?rbibtools::read_bib`](https://frbcesab.github.io/rbibtools/reference/read_bib.html) for further information
 
 ---
 
@@ -964,7 +964,7 @@ download.file(url = paste0(repo_url, filename_2), destfile = file.path(path, fil
 
 ## Import .bib files ----
 
-refs &lt;- rbibtools::read_bibtex(path)
+refs &lt;- rbibtools::read_bib(path)
 
 
 ## Detect duplicates (based on DOI) ----
