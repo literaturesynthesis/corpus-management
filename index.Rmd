@@ -1,7 +1,7 @@
 ---
 title: <br>Corpus management
 subtitle: "<i>Good practices, tips & tricks</i>"
-date: .date[October 2022]
+date: .date[October 2023]
 author: |
   .author[Nicolas Casajus]
   .email[nicolas.casajus@fondationbiodiversite.fr]
