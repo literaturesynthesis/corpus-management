@@ -1,0 +1,51 @@
+---
+from: markdown+emoji
+format:
+  revealjs:
+    logo: img/cesab-logo.png
+    footer: "{{< fa brands github >}} &nbsp;<https://github.com/literaturesynthesis/corpus-management>"
+    smaller: true
+    auto-stretch: false
+    chalkboard: true
+    toc-depth: 1
+    theme: [default, "styles/main.scss"]
+knitr:
+  opts_chunk: 
+    comment: "##" 
+engine: knitr
+---
+
+```{r}
+#| child: "slides/title-slide.qmd"
+```
+
+
+```{r}
+#| child: "slides/toc.qmd"
+```
+
+```{r}
+#| child: "slides/reference-acquisition.qmd"
+```
+
+```{r}
+#| child: "slides/reference-management.qmd"
+```
+
+```{r}
+#| child: "slides/reference-access.qmd"
+```
+
+```{r}
+#| child: "slides/remove-duplicates.qmd"
+```
+
+
+```{r}
+#| child: "slides/extras.qmd"
+```
+
+
+```{r}
+#| child: "slides/exercise.qmd"
+```

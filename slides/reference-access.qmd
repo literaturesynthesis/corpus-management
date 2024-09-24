@@ -1,0 +1,181 @@
+# {{< fa magnifying-glass size=1x >}} &nbsp;&nbsp;Reference access
+
+## Access from Zotero
+
+<br/><br/><br/><br/>
+
+:::: { .columns }
+::: { .column .center width="50%"}
+{{< fa file-csv size=2x >}}<br/><br/>CSV export
+:::
+::: { .column .center width="50%"}
+{{< fa file-code size=2x >}}<br/><br/>BibTeX export
+:::
+::::
+
+
+
+<br/><br/><br/><br/>
+
+
+:::: { .columns }
+::: { .column .center width="50%"}
+{{< fa database size=2x >}}<br/><br/>SQL query
+:::
+::: { .column .center width="50%"}
+{{< fa code size=2x >}}<br/><br/>Zotero API
+:::
+::::
+
+
+
+## Access from Zotero
+
+<br/><br/><br/><br/>
+
+:::: { .columns }
+::: { .column .center width="50%"}
+{{< fa file-csv size=2x >}}<br/><br/>**CSV export**
+:::
+::: { .column .center width="50%"}
+{{< fa file-code size=2x >}}<br/><br/>**BibTeX export**
+:::
+::::
+
+
+
+<br/><br/><br/><br/>
+
+
+:::: { .columns }
+::: { .column .center width="50%"}
+{{< fa database size=2x >}}<br/><br/>**SQL query**
+:::
+::: { .column .center width="50%"}
+{{< fa code size=2x >}}<br/><br/>Zotero API
+:::
+::::
+
+
+## Export references from Zotero
+
+![](img/zotero-export.png){width=80% fig-align='center'}
+
+
+
+## Export references as CSV file
+
+![](img/zotero-export-csv.png){width=80% fig-align='center'}
+
+
+
+## Export references as BibTeX file
+
+![](img/zotero-export-bibtex.png){width=80% fig-align='center'}
+
+
+
+## Importing BibTeX into R
+
+[![](img/rbibtools.png){width=60% fig-align='right'}](https://github.com/frbcesab/rbibtools)
+
+
+<br/>
+
+{{< fa hand-point-right >}} &nbsp;[**GitHub repo**](https://github.com/frbcesab/rbibtools)
+
+
+
+## Importing BibTeX into R
+
+:::: { .columns }
+::: { .column width="50%"}
+Installation:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# Installation ----
+install.packages("remotes")
+remotes::install_github("frbcesab/rbibtools")
+```
+:::
+
+::: { .column width="50%"}
+Usage:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# Import BibTeX files ----
+refs <- rbibtools::read_bib(path = "folder_with_bib_files")
+
+# Class ----
+class(refs)
+## [1] "data.frame"
+```
+:::
+::::
+
+
+. . .
+
+
+Output:
+
+![](img/rbibtools-output.png){fig-align='left' width=100%}
+
+
+
+
+## Query Zotero SQL database
+
+[![](img/zoteror){width=60% fig-align='right'}](https://github.com/frbcesab/zoteror)
+
+
+<br/>
+
+{{< fa hand-point-right >}} &nbsp;[**GitHub repo**](https://github.com/frbcesab/zoteror)
+
+
+## Query Zotero SQL database
+
+:::: { .columns }
+::: { .column width="50%"}
+Installation:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# Installation ----
+install.packages("remotes")
+remotes::install_github("frbcesab/zoteror")
+```
+:::
+
+::: { .column width="50%"}
+Usage:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# Import BibTeX files ----
+refs <- zoteror::get_zotero_data(path = "folder_with_zotero.sqlite")
+
+# Class ----
+class(refs)
+## [1] "data.frame"
+```
+:::
+::::
+
+
+. . .
+
+Output:
+
+![](img/zoteror-output.png){fig-align='left' width=100%}

@@ -1,0 +1,33 @@
+# Table of contents
+
+---
+
+## Table of contents
+
+<br/><br/><br/><br/>
+
+:::: { .columns }
+::: { .column .center width="33%"}
+{{< fa download size=2x >}}<br/><br/>Reference acquisition
+:::
+::: { .column .center width="33%"}
+{{< fa brands mendeley size=2x >}}<br/><br/>Reference management
+:::
+::: { .column .center width="33%"}
+{{< fa magnifying-glass size=2x >}}<br/><br/>Reference access
+:::
+::::
+
+<br/><br/>
+
+:::: { .columns }
+::: { .column .center width="33%"}
+{{< fa copy size=2x >}}<br/><br/>Remove duplicates
+:::
+::: { .column .center width="33%"}
+{{< fa cart-plus size=2x >}}<br/><br/>Extras
+:::
+::: { .column .center width="33%"}
+{{< fa user-clock size=2x >}}<br/><br/>Exercise
+:::
+::::

@@ -1,0 +1,175 @@
+# {{< fa brands mendeley size=1x >}} &nbsp;&nbsp;Reference management
+
+## Reference management software
+
+Allows you to:
+
+- store, organize, and annotate references
+- retrieve metadata & full text (connection to databases)
+- easily add new references (plugins for Web browsers)
+- insert in-text citations (plugins for Word, Writer, RStudio)
+- generate a bibliography
+- share libraries and collaborate (online account)
+
+
+## Software comparison
+
+<br/><br/>
+
+|                   |                 [`EndNote`](https://endnote.com/)                 |           [`Mendeley`](https://www.mendeley.com/reference-management/reference-manager)            |                                [`Zotero`](https://www.zotero.org/)                                 |
+|:----------------:|:----------------------:|:----------------:|:------------------:|
+|       OS        | {{< fa brands windows >}} &nbsp; {{< fa brands apple >}} | {{< fa brands windows >}} &nbsp; {{< fa brands apple >}} &nbsp; {{< fa brands linux >}} | {{< fa brands windows >}} &nbsp; {{< fa brands apple >}} &nbsp; {{< fa brands linux >}} |
+|     License     |                    Proprietary (Clarivate)                     |                                     Proprietary (Elsevier)                                      |                                       Open source (AGPL)                                        |
+|     Pricing     |                             \> 200 $                             |                                                Free                                                |                                                Free                                                |
+| Online storage  |                    2 GB (+ pricing options)                     |                                     2 GB (+ pricing options)                                     |                                   300 MB (+ pricing options)                                    |
+| Citation styles |                              \> 7000                              |                                              \> 7000                                               |                                             \> 10,000                                              |
+|   Google Doc    |        {{< fa xmark >}}        |                        {{< fa xmark >}}                         |                          {{< fa check >}}                           |
+|      LaTeX      |        {{< fa xmark >}}        |                          {{< fa check >}}                           |                          {{< fa check >}}                           |
+|  Customization  |        {{< fa xmark >}}        |                        {{< fa xmark >}}                         |                          {{< fa check >}}                           |
+
+
+
+## Zotero
+
+:::: { .columns }
+::: { .column width="40%"}
+![](img/zotero-logo.png){width=40%}
+
+- [`Open source`](https://github.com/zotero/zotero) and free
+- [`Well documented`](https://www.zotero.org/support/)
+- Active [`community`](https://forums.zotero.org/discussions)
+- [`Web browser connector`](https://www.zotero.org/download/connectors)
+- [`Word processor plugin`](https://www.zotero.org/support/word_processor_integration)
+- A lot of [`plugins`](https://www.zotero.org/support/plugins)
+- A lot of [`styles`](https://www.zotero.org/styles)
+- Support for LaTeX, BibTeX, and [`RStudio`](https://rstudio.github.io/visual-markdown-editing/citations.html)
+:::
+::: { .column .center width="60%"}
+![](img/zotero-ui.png)
+:::
+::::
+
+
+## Zotero plugins
+
+- `Zotero connector` &nbsp;[{{< fa arrow-up-right-from-square >}}](https://www.zotero.org/download/connectors)
+
+  - Available for the most popular Web browsers:
+  &nbsp;{{< fa brands firefox-browser >}}
+  &nbsp;{{< fa brands chrome >}}
+  &nbsp;{{< fa brands safari >}}
+  &nbsp;{{< fa brands edge >}}
+  - Add items to your Zotero library in one click
+  - Add PDF (if open access)
+
+<br/>
+
+- `Word processor plugin` &nbsp;[{{< fa arrow-up-right-from-square >}}](https://www.zotero.org/support/word_processor_integration)
+
+  - Available for Word, Writer and Google Doc
+  - Insert in-text citations
+  - Generate bibliography according to a selected style
+
+<br/>
+
+- Citation picker for VS Code (VS Codium)
+
+  - `Citation Picker for Zotero`
+  &nbsp;[{{< fa arrow-up-right-from-square >}}](https://marketplace.visualstudio.com/items?itemName=mblode.zotero)
+
+
+## Zotero plugins
+
+:::: { .columns }
+::: { .column width="45%"}
+- `Better BibTeX` &nbsp;[{{< fa arrow-up-right-from-square >}}](https://retorque.re/zotero-better-bibtex/)
+
+  - Improve the compatibility with LaTeX, Markdown, and R
+  - Auto-generate citation keys
+  - Auto-export BibTeX files (one file per collection)
+
+<br>
+
+
+- `ZotFile` &nbsp;[{{< fa arrow-up-right-from-square >}}](http://zotfile.com/)
+
+  - Rename attachments (with a lot of naming rules)
+  - Move attachments (to a specific location)
+:::
+::: { .column width="10%"}
+:::
+::: { .column width="45%"}
+- `Better Notes` &nbsp;[{{< fa arrow-up-right-from-square >}}](https://github.com/windingwind/zotero-better-notes)
+
+  - Enhance note editor (markdown)
+  - Knowledge analysis
+  - Note templates
+  - Export notes (PDF, DOCX, etc.)
+
+<br>
+
+- `DOI manager` &nbsp;[{{< fa arrow-up-right-from-square >}}](https://github.com/bwiernik/zotero-shortdoi)
+
+  - Look up DOI from CrossRef
+  - Check DOI validity
+  - Clean the DOI field
+:::
+::::
+
+<br/>
+
+{{< fa hand-point-right >}} &nbsp;[**Official list**](https://www.zotero.org/support/plugins)
+
+
+## Zotero and RStudio
+
+![](img/zotero-rstudio.png){width=50% fig-align='center'}
+
+
+<br>
+
+:::: { .columns }
+::: { .column width="45%"}
+- Require a recent version of [`RStudio`](https://www.rstudio.com/products/rstudio/)
+- Edit R Markdown file using the **Visual R Markdown** editing mode
+- Easily insert in-text citations
+- Auto-generate BibTex file
+:::
+::: { .column width="10%"}
+:::
+::: { .column width="45%"}
+:::
+::::
+
+## Zotero and RStudio
+
+![](img/zotero-rstudio.png){width=50% fig-align='center'}
+
+
+<br>
+
+:::: { .columns }
+::: { .column width="45%"}
+- Require a recent version of [`RStudio`](https://www.rstudio.com/products/rstudio/)
+- Edit R Markdown file using the **Visual R Markdown** editing mode
+- Easily insert in-text citations
+- Auto-generate BibTex file
+:::
+::: { .column width="10%"}
+:::
+::: { .column width="45%"}
+`YAML` header:
+```yaml
+---
+title: "My document"
+bibliography: references.bib
+link-citations: true
+---
+```
+
+<br/>
+
+{{< fa hand-point-right >}} &nbsp;[More information](https://rstudio.github.io/visual-markdown-editing/citations.html)
+
+:::
+::::

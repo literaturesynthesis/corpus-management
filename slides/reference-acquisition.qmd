@@ -1,0 +1,361 @@
+# {{< fa download size=1x >}} &nbsp;&nbsp;Reference acquisition
+
+
+## Two methods
+
+<br/><br/><br/><br/>
+
+:::: { .columns }
+::: { .column .center width="45%"}
+![Through a **Web interface**](img/api-1.png)
+:::
+::: { .column .center width="10%"}
+:::
+::: { .column .center width="45%"}
+![Through an **API**](img/api-2.png)
+:::
+::::
+
+:::: { .columns }
+::: { .column .center width="45%"}
+{{< fa computer-mouse size=lg >}}
+:::
+::: { .column .center width="10%"}
+:::
+::: { .column .center width="45%"}
+{{< fa code size=lg >}}
+:::
+::::
+
+
+## Web interface
+
+![WoS records](img/wos-0.png){width=80%}
+
+
+
+## Web interface
+
+![WoS export format](img/wos-1.png){width=80%}
+
+
+
+## File formats
+
+
+## File formats
+
+:::: { .columns }
+::: { .column width="50%"}
+**Plain text** (`.txt`)
+
+```txt
+FN Clarivate Analytics Web of Science
+VR 1.0
+PT J
+AU Buisson, L
+   Thuiller, W
+   Casajus, N
+   Lek, S
+   Grenouillet, G
+AF Buisson, Laetitia
+   Thuiller, Wilfried
+   Casajus, Nicolas
+   Lek, Sovan
+   Grenouillet, Gael
+TI Uncertainty in ensemble forecasting of species distribution
+SO GLOBAL CHANGE BIOLOGY
+PY 2010
+VL 16
+IS 4
+BP 1145
+EP 1157
+DI 10.1111/j.1365-2486.2009.02000.x
+UT WOS:000274813800001
+ER
+EF%
+```
+:::
+::: { .column width="50%"}
+**RIS format** (`.ris`)
+
+```txt
+TY  - JOUR
+AU  - Buisson, L
+AU  - Thuiller, W
+AU  - Casajus, N
+AU  - Lek, S
+AU  - Grenouillet, G
+TI  - Uncertainty in ensemble forecasting of species distribution
+T2  - GLOBAL CHANGE BIOLOGY
+PY  - 2010
+VL  - 16
+IS  - 4
+SP  - 1145
+EP  - 1157
+DO  - 10.1111/j.1365-2486.2009.02000.x
+AN  - WOS:000274813800001
+ER  -
+```
+:::
+::::
+
+
+## File formats
+
+:::: { .columns }
+::: { .column width="60%"}
+**BibTeX format** (`.bib`)
+
+```bibtex
+@article{buisson-2010-gcb,
+  author  = {Buisson, Laetitia and Thuiller, Wilfried and Casajus, Nicolas and 
+             Lek, Sovan and Grenouillet, Ga{\"{e}}l},
+  title   = {Uncertainty in ensemble forecasting of species distribution},
+  journal = {Global Change Biology},
+  year    = {2010},
+  volume  = {16},
+  number  = {4},
+  pages   = {1145-1157},
+  doi     = {10.1111/j.1365-2486.2009.02000.x}
+}
+```
+:::
+::: { .column width="40%"}
+:::
+::::
+
+
+## File formats
+
+:::: { .columns }
+::: { .column width="60%"}
+**BibTeX format** (`.bib`)
+
+```bibtex
+@article{buisson-2010-gcb,
+  author  = {Buisson, Laetitia and Thuiller, Wilfried and Casajus, Nicolas and 
+             Lek, Sovan and Grenouillet, Ga{\"{e}}l},
+  title   = {Uncertainty in ensemble forecasting of species distribution},
+  journal = {Global Change Biology},
+  year    = {2010},
+  volume  = {16},
+  number  = {4},
+  pages   = {1145-1157},
+  doi     = {10.1111/j.1365-2486.2009.02000.x}
+}
+```
+:::
+::: { .column width="40%"}
+Structure
+
+```bibtex
+% Entry type
+@article{ ... }
+
+% Citekey
+buisson-2010-gcb
+
+% Key-value pairs
+journal = {Global Change Biology}
+
+% or
+journal = "Global Change Biology"
+```
+:::
+::::
+
+
+. . .
+
+<br/>
+
+**Advantages:**
+
+- Easy to read and to understand
+- Good support for accents and case
+- Recognized by R, Rmarkdown, Quarto, LaTeX, Zotero/Mendeley, etc.
+
+
+<br/>
+
+{{< fa lightbulb >}} &nbsp;Suggested reading: [**Quick BibTeX Guide**](https://www.bibtex.com/)
+
+
+## Application Programming Interface (API)
+
+
+![](img/api-2.png){width=60% fig-align='center'}
+
+
+
+## Application Programming Interface (API)
+
+
+![](img/api-2.png){width=60% fig-align='center'}
+
+
+:::: { .columns }
+::: { .column width="50%"}
+**Description/Advantages**
+
+- Command line interface
+- Good for automation & reproducibility
+- Structured raw data (JSON, XML, etc.)
+- Various clients available (in R, Python, etc.)
+- Available for Web of Science, Scopus, OpenAlex
+- No API for Google Scholar (web scraping)
+:::
+::: { .column width="10%"}
+:::
+::: { .column width="40%"}
+:::
+::::
+
+
+
+## Application Programming Interface (API)
+
+
+![](img/api-2.png){width=60% fig-align='center'}
+
+
+:::: { .columns }
+::: { .column width="50%"}
+**Description/Advantages**
+
+- Command line interface
+- Good for automation & reproducibility
+- Structured raw data (JSON, XML, etc.)
+- Various clients available (in R, Python, etc.)
+- Available for Web of Science, Scopus, OpenAlex
+- No API for Google Scholar (web scraping)
+:::
+::: { .column width="10%"}
+:::
+::: { .column width="40%"}
+**Limitations**
+
+- Requires a token (authentication)
+- Sometimes not free (WoS)
+- Number of records per request
+- Number of requests per month
+- Incomplete data (i.e. abstract)
+:::
+::::
+
+
+## WoS Starter API
+
+
+[![](img/api-wosstarter.png){width=60% fig-align='left'}](https://developer.clarivate.com/apis/wos-starter)
+
+
+:::: { .columns }
+::: { .column width="50%"}
+{{< fa hand-point-right >}} &nbsp;You need to require an **API token**
+:::
+::: { .column width="50%"}
+Metadata available:
+
+```txt
+Document identifier
+Document type
+Title
+Authors
+Published year
+Published month
+Source
+Volume
+Issue
+Pages
+Article number
+Book editors
+Keywords
+DOI
+ISSN
+ISBN
+PMID
+Time cited
+```
+:::
+::::
+
+
+
+
+## WoS Starter API client
+
+[![](img/rwosstarter.png){width=60% fig-align='right'}](https://github.com/frbcesab/rwosstarter)
+
+
+<br/>
+
+{{< fa hand-point-right >}} &nbsp;[**GitHub repo**](https://github.com/frbcesab/rwosstarter)
+
+
+
+## WoS Starter API client
+
+:::: { .columns }
+::: { .column width="50%"}
+Installation:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# Installation ----
+install.packages("remotes")
+remotes::install_github("frbcesab/rwosstarter")
+```
+:::
+
+::: { .column width="50%"}
+:::
+::::
+
+
+## WoS Starter API client
+
+
+:::: { .columns }
+::: { .column width="50%"}
+Installation:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# Installation ----
+install.packages("remotes")
+remotes::install_github("frbcesab/rwosstarter")
+```
+:::
+
+::: { .column width="50%"}
+Usage:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# Search equation ----
+query <- 'AU="Casajus N"'
+
+# Get the total number of records ----
+rwosstarter::wos_search(query, database = "WOS")
+## [1] 28
+
+# Download records metadata ----
+refs <- rwosstarter::wos_get_records(query, database = "WOS")
+```
+:::
+::::
+
+. . .
+
+Output (**no abstract**):
+
+![](img/rwosstarter-outputs.png){fig-align='left'}
+

@@ -1,0 +1,543 @@
+# {{< fa copy size=1x >}} &nbsp;&nbsp;Remove duplicates
+
+
+## Detect duplicated references
+
+Many available tools:
+
+- Zotero & Excel - Paintful
+- R package [`revtools`](https://github.com/mjwestgate/revtools) - No more maintained
+- R package [`synthesisr`](https://github.com/mjwestgate/synthesisr)
+- R package [`bibliometrix`](https://www.bibliometrix.org/home/)
+- and many more...
+
+
+<br>
+
+. . .
+
+
+Let's keep it simple: 
+
+{{< fa circle-right >}} &nbsp;The `duplicated()` function
+
+
+
+## The `duplicated()` function
+
+:::: {.columns}
+
+::: {.column width=50%}
+**Easy case**
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Create dataset ----
+refs <- data.frame(
+  "title" = c("Climate change and biodiversity", 
+              "Climate change and biodiversity",
+              "Climate change and biodiversity",
+              "Fisheries and management - Part I", 
+              "Fisheries and management - Part II"))
+refs
+```
+:::
+
+::: {.column width=50%}
+:::
+
+::::
+
+
+
+## The `duplicated()` function
+
+:::: {.columns}
+
+::: {.column width=50%}
+**Easy case**
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Create dataset ----
+refs <- data.frame(
+  "title" = c("Climate change and biodiversity", 
+              "Climate change and biodiversity",
+              "Climate change and biodiversity",
+              "Fisheries and management - Part I", 
+              "Fisheries and management - Part II"))
+refs
+```
+
+<br>
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Detect duplicates ----
+dups <- duplicated(refs$"title")
+dups
+```
+:::
+
+::: {.column width=50%}
+:::
+
+::::
+
+
+
+## The `duplicated()` function
+
+:::: {.columns}
+
+::: {.column width=50%}
+**Easy case**
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Create dataset ----
+refs <- data.frame(
+  "title" = c("Climate change and biodiversity", 
+              "Climate change and biodiversity",
+              "Climate change and biodiversity",
+              "Fisheries and management - Part I", 
+              "Fisheries and management - Part II"))
+refs
+```
+
+<br>
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Detect duplicates ----
+dups <- duplicated(refs$"title")
+dups
+```
+
+<br>
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Append results ----
+refs$"duplicate" <- as.numeric(dups)
+refs
+```
+:::
+
+::: {.column width=50%}
+:::
+
+::::
+
+
+
+## The `duplicated()` function
+
+:::: {.columns}
+
+::: {.column width=50%}
+**Real case**
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Create dataset ----
+refs <- data.frame(
+  "title" = c("Climate change", 
+              "CLIMATE CHANGE",
+              "Climate- change."))
+```
+
+<br>
+
+:::
+
+::: {.column}
+:::
+
+::::
+
+
+
+## The `duplicated()` function
+
+:::: {.columns}
+
+::: {.column width=50%}
+**Real case**
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Create dataset ----
+refs <- data.frame(
+  "title" = c("Climate change", 
+              "CLIMATE CHANGE",
+              "Climate- change."))
+```
+
+<br>
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Detect duplicates ----
+dups <- duplicated(refs$"title")
+
+# Append results ----
+refs$"duplicate" <- as.numeric(dups)
+refs
+```
+:::
+
+::: {.column}
+:::
+
+::::
+
+
+
+## The `duplicated()` function
+
+:::: {.columns}
+
+::: {.column width=50%}
+**Real case**
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Create dataset ----
+refs <- data.frame(
+  "title" = c("Climate change", 
+              "CLIMATE CHANGE",
+              "Climate- change."))
+```
+
+<br>
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Detect duplicates ----
+dups <- duplicated(refs$"title")
+
+# Append results ----
+refs$"duplicate" <- as.numeric(dups)
+refs
+```
+:::
+
+::: {.column}
+**Clean data**
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Convert to lower case ----
+(titles <- tolower(refs$"title"))
+```
+:::
+
+::::
+
+
+## The `duplicated()` function
+
+:::: {.columns}
+
+::: {.column width=50%}
+**Real case**
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Create dataset ----
+refs <- data.frame(
+  "title" = c("Climate change", 
+              "CLIMATE CHANGE",
+              "Climate- change."))
+```
+
+<br>
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Detect duplicates ----
+dups <- duplicated(refs$"title")
+
+# Append results ----
+refs$"duplicate" <- as.numeric(dups)
+refs
+```
+:::
+
+::: {.column}
+**Clean data**
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Convert to lower case ----
+(titles <- tolower(refs$"title"))
+```
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Remove punctuation ----
+(titles <- gsub("[[:punct:]]", " ", titles))
+```
+:::
+
+::::
+
+
+
+## The `duplicated()` function
+
+:::: {.columns}
+
+::: {.column width=50%}
+**Real case**
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Create dataset ----
+refs <- data.frame(
+  "title" = c("Climate change", 
+              "CLIMATE CHANGE",
+              "Climate- change."))
+```
+
+<br>
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Detect duplicates ----
+dups <- duplicated(refs$"title")
+
+# Append results ----
+refs$"duplicate" <- as.numeric(dups)
+refs
+```
+:::
+
+::: {.column}
+**Clean data**
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Convert to lower case ----
+(titles <- tolower(refs$"title"))
+```
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Remove punctuation ----
+(titles <- gsub("[[:punct:]]", " ", titles))
+```
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Remove multi-whitespace ----
+(titles <- gsub("\\s+", " ", titles))
+```
+:::
+
+::::
+
+
+
+## The `duplicated()` function
+
+:::: {.columns}
+
+::: {.column width=50%}
+**Real case**
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Create dataset ----
+refs <- data.frame(
+  "title" = c("Climate change", 
+              "CLIMATE CHANGE",
+              "Climate- change."))
+```
+
+<br>
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Detect duplicates ----
+dups <- duplicated(refs$"title")
+
+# Append results ----
+refs$"duplicate" <- as.numeric(dups)
+refs
+```
+:::
+
+::: {.column}
+**Clean data**
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Convert to lower case ----
+(titles <- tolower(refs$"title"))
+```
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Remove punctuation ----
+(titles <- gsub("[[:punct:]]", " ", titles))
+```
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Remove multi-whitespace ----
+(titles <- gsub("\\s+", " ", titles))
+```
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Remove leading and trailing whitespace ----
+(titles <- trimws(titles))
+```
+:::
+
+::::
+
+
+
+## The `duplicated()` function
+
+:::: {.columns}
+
+::: {.column width=50%}
+**Real case**
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Create dataset ----
+refs <- data.frame(
+  "title" = c("Climate change", 
+              "CLIMATE CHANGE",
+              "Climate- change."))
+```
+
+<br>
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Detect duplicates ----
+dups <- duplicated(refs$"title")
+
+# Append results ----
+refs$"duplicate" <- as.numeric(dups)
+refs
+```
+:::
+
+::: {.column}
+**Clean data**
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Convert to lower case ----
+(titles <- tolower(refs$"title"))
+```
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Remove punctuation ----
+(titles <- gsub("[[:punct:]]", " ", titles))
+```
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Remove multi-whitespace ----
+(titles <- gsub("\\s+", " ", titles))
+```
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Remove leading and trailing whitespace ----
+(titles <- trimws(titles))
+```
+
+<br>
+
+```{r}
+#| echo: true
+#| eval: true
+# Detect duplicates ----
+dups <- duplicated(titles)
+
+# Append results ----
+refs$"duplicate" <- as.numeric(dups)
+refs
+```
+:::
+
+::::
+
+
+

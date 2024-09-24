@@ -1,0 +1,96 @@
+# {{< fa cart-plus size=1x >}} &nbsp;&nbsp;Extras
+
+## OpenAlex
+
+![](img/openalex-logo.png){fig-align='right' width=25%}
+
+
+> A bibliographic catalogue of scientific papers, authors and institutions accessible in **open access** mode[^1].
+
+<br>
+
+. . .
+
+- Competes with commercial products such as Clarivate's Web of Science or Elsevier's Scopus.
+- Provides bibliometrics tools
+- Provides an API
+- Free account
+- Download the whole database
+
+
+<br>
+
+Website: [**https://openalex.org**](https://openalex.org/)
+
+
+[^1]: Source: [Wikipedia](https://en.wikipedia.org/wiki/OpenAlex)
+
+
+
+## OpenAlex
+
+A lightweight interface
+
+<br>
+
+[![](img/openalex-1){fig-align='center' width=80%}](https://openalex.org)
+
+
+## OpenAlex API R client
+
+[![](img/openalexr){width=60% fig-align='right'}](https://docs.ropensci.org/openalexR/)
+
+
+<br/>
+
+{{< fa hand-point-right >}} &nbsp;[**GitHub repo**](https://github.com/ropensci/openalexR/)
+
+
+
+
+
+## OpenAlex API R client
+
+:::: { .columns }
+::: { .column width="50%"}
+Installation:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# Installation ----
+install.packages("openalexR")
+```
+:::
+
+::: { .column width="50%"}
+Usage:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# Be polite and tell who you are ----
+options(openalexR.mailto = "anonymous@mail.com")
+
+# DOI to search for ----
+dois <- c("10.1371/journal.pbio.3001640", 
+          "10.1038/s41597-023-02264-2")
+
+# Retrieve document metadata ----
+metadata <- openalexR::oa_fetch(entity = "works", doi = dois)
+```
+:::
+::::
+
+. . .
+
+<br>
+
+Output (**with abstract**):
+
+![](img/openalexr-output.png){fig-align='left' width=100%}
+
+
+
