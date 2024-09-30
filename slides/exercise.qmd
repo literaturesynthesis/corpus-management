@@ -51,7 +51,6 @@
 
 ## Correction
 
-<!-- 
 
 :::: {.columns}
 
@@ -156,4 +155,3 @@ writexl::write_xlsx(refs, file.path(path, "unique_references.xlsx"))
 
 ::::
 
--->
