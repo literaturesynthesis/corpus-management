@@ -21,8 +21,8 @@
 ::: {.column}
 {{< fa circle-arrow-right >}} &nbsp;**Download the two following `.bib` files:**
   
-  - `refs-scopus.bib` available [**here**](https://raw.githubusercontent.com/literaturesynthesis/corpus-management/main/data/exercise/refs-scopus.bib)
-  - `refs-webofscience.bib` available [**here**](https://raw.githubusercontent.com/literaturesynthesis/corpus-management/main/data/exercise/refs-webofscience.bib)
+  - `refs-scopus.bib` available [**here**](https://raw.githubusercontent.com/literaturesynthesis/corpus-management/main/data/refs-scopus.bib)
+  - `refs-webofscience.bib` available [**here**](https://raw.githubusercontent.com/literaturesynthesis/corpus-management/main/data/refs-webofscience.bib)
   
 {{< fa circle-arrow-right >}} &nbsp;**Import the two `.bib` files in Zotero**
 
