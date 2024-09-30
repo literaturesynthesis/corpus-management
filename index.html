@@ -1745,113 +1745,86 @@ Author name<br/>
 </section>
 <section id="correction" class="slide level2">
 <h2>Correction</h2>
-<!-- 
+<div class="columns">
+<div class="column">
+<p><strong>Data acquisition</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href=""></a><span class="co"># Folder to save .bib files ----</span></span>
+<span id="cb78-2"><a href=""></a>path <span class="ot">&lt;-</span> <span class="st">"~/Documents/Exercise"</span></span>
+<span id="cb78-3"><a href=""></a><span class="fu">dir.create</span>(path, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb78-4"><a href=""></a></span>
+<span id="cb78-5"><a href=""></a><span class="co"># Download .bib files ----</span></span>
+<span id="cb78-6"><a href=""></a>repo_url   <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"https://raw.githubusercontent.com/"</span>, </span>
+<span id="cb78-7"><a href=""></a>                     <span class="st">"literaturesynthesis/"</span>, </span>
+<span id="cb78-8"><a href=""></a>                     <span class="st">"corpus-management/main/data/"</span>)</span>
+<span id="cb78-9"><a href=""></a></span>
+<span id="cb78-10"><a href=""></a>filename_1 <span class="ot">&lt;-</span> <span class="st">"refs-scopus.bib"</span></span>
+<span id="cb78-11"><a href=""></a></span>
+<span id="cb78-12"><a href=""></a><span class="fu">download.file</span>(<span class="at">url      =</span> <span class="fu">paste0</span>(repo_url, filename_1), </span>
+<span id="cb78-13"><a href=""></a>              <span class="at">destfile =</span> <span class="fu">file.path</span>(path, filename_1))</span>
+<span id="cb78-14"><a href=""></a></span>
+<span id="cb78-15"><a href=""></a>filename_2 <span class="ot">&lt;-</span> <span class="st">"refs-webofscience.bib"</span></span>
+<span id="cb78-16"><a href=""></a></span>
+<span id="cb78-17"><a href=""></a><span class="fu">download.file</span>(<span class="at">url      =</span> <span class="fu">paste0</span>(repo_url, filename_2), </span>
+<span id="cb78-18"><a href=""></a>              <span class="at">destfile =</span> <span class="fu">file.path</span>(path, filename_2))</span>
+<span id="cb78-19"><a href=""></a></span>
+<span id="cb78-20"><a href=""></a><span class="co"># Zotero step ----</span></span>
+<span id="cb78-21"><a href=""></a><span class="do">## ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column">
 
-:::: {.columns}
-
-::: {.column}
-**Data acquisition**
-
-::: {.cell}
-
-```{.r .cell-code}
-# Folder to save .bib files ----
-path <- "~/Documents/Exercise"
-dir.create(path, recursive = TRUE)
-
-# Download .bib files ----
-repo_url   <- paste0("https://raw.githubusercontent.com/", 
-                     "literaturesynthesis/", 
-                     "corpus-management/main/data/")
-
-filename_1 <- "refs-scopus.bib"
-
-download.file(url      = paste0(repo_url, filename_1), 
-              destfile = file.path(path, filename_1))
-
-filename_2 <- "refs-webofscience.bib"
-
-download.file(url      = paste0(repo_url, filename_2), 
-              destfile = file.path(path, filename_2))
-
-# Zotero step ----
-## ...
-```
-:::
-:::
-
-::: {.column}
-:::
-
-::::
-
-
-
-## Correction
-
-:::: {.columns}
-
-::: {.column}
-**Data acquisition**
-
-::: {.cell}
-
-```{.r .cell-code}
-# Folder to save .bib files ----
-path <- "~/Documents/Exercise"
-dir.create(path, recursive = TRUE)
-
-# Download .bib files ----
-repo_url   <- paste0("https://raw.githubusercontent.com/", 
-                     "literaturesynthesis/", 
-                     "corpus-management/main/data/")
-
-filename_1 <- "refs-scopus.bib"
-
-download.file(url      = paste0(repo_url, filename_1), 
-              destfile = file.path(path, filename_1))
-
-filename_2 <- "refs-webofscience.bib"
-
-download.file(url      = paste0(repo_url, filename_2), 
-              destfile = file.path(path, filename_2))
-
-# Zotero step ----
-## ...
-```
-:::
-:::
-
-::: {.column}
-**Data cleaning**
-
-::: {.cell}
-
-```{.r .cell-code}
-# Access references ----
-refs <- zoteror::get_zotero_data(path = "~/zotero")
-
-# Select collections ----
-refs <- refs[refs$"collection" %in% c("WOS", "Scopus"), ]
-
-# Detect duplicates (based on DOI) ----
-duplicated_doi <- duplicated(refs$"doi")
-
-# Store information ----
-refs$"duplicated" <- ifelse(duplicated_doi, 1, 0)
-
-# Number of duplicates ----
-sum(duplicated_doi)
-
-## Export .xlsx file ----
-writexl::write_xlsx(refs, file.path(path, "unique_references.xlsx"))
-```
-:::
-:::
-
-::::
-
--->
+</div></div>
+</section>
+<section id="correction-1" class="slide level2">
+<h2>Correction</h2>
+<div class="columns">
+<div class="column">
+<p><strong>Data acquisition</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href=""></a><span class="co"># Folder to save .bib files ----</span></span>
+<span id="cb79-2"><a href=""></a>path <span class="ot">&lt;-</span> <span class="st">"~/Documents/Exercise"</span></span>
+<span id="cb79-3"><a href=""></a><span class="fu">dir.create</span>(path, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb79-4"><a href=""></a></span>
+<span id="cb79-5"><a href=""></a><span class="co"># Download .bib files ----</span></span>
+<span id="cb79-6"><a href=""></a>repo_url   <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"https://raw.githubusercontent.com/"</span>, </span>
+<span id="cb79-7"><a href=""></a>                     <span class="st">"literaturesynthesis/"</span>, </span>
+<span id="cb79-8"><a href=""></a>                     <span class="st">"corpus-management/main/data/"</span>)</span>
+<span id="cb79-9"><a href=""></a></span>
+<span id="cb79-10"><a href=""></a>filename_1 <span class="ot">&lt;-</span> <span class="st">"refs-scopus.bib"</span></span>
+<span id="cb79-11"><a href=""></a></span>
+<span id="cb79-12"><a href=""></a><span class="fu">download.file</span>(<span class="at">url      =</span> <span class="fu">paste0</span>(repo_url, filename_1), </span>
+<span id="cb79-13"><a href=""></a>              <span class="at">destfile =</span> <span class="fu">file.path</span>(path, filename_1))</span>
+<span id="cb79-14"><a href=""></a></span>
+<span id="cb79-15"><a href=""></a>filename_2 <span class="ot">&lt;-</span> <span class="st">"refs-webofscience.bib"</span></span>
+<span id="cb79-16"><a href=""></a></span>
+<span id="cb79-17"><a href=""></a><span class="fu">download.file</span>(<span class="at">url      =</span> <span class="fu">paste0</span>(repo_url, filename_2), </span>
+<span id="cb79-18"><a href=""></a>              <span class="at">destfile =</span> <span class="fu">file.path</span>(path, filename_2))</span>
+<span id="cb79-19"><a href=""></a></span>
+<span id="cb79-20"><a href=""></a><span class="co"># Zotero step ----</span></span>
+<span id="cb79-21"><a href=""></a><span class="do">## ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column">
+<p><strong>Data cleaning</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href=""></a><span class="co"># Access references ----</span></span>
+<span id="cb80-2"><a href=""></a>refs <span class="ot">&lt;-</span> zoteror<span class="sc">::</span><span class="fu">get_zotero_data</span>(<span class="at">path =</span> <span class="st">"~/zotero"</span>)</span>
+<span id="cb80-3"><a href=""></a></span>
+<span id="cb80-4"><a href=""></a><span class="co"># Select collections ----</span></span>
+<span id="cb80-5"><a href=""></a>refs <span class="ot">&lt;-</span> refs[refs<span class="sc">$</span><span class="st">"collection"</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"WOS"</span>, <span class="st">"Scopus"</span>), ]</span>
+<span id="cb80-6"><a href=""></a></span>
+<span id="cb80-7"><a href=""></a><span class="co"># Detect duplicates (based on DOI) ----</span></span>
+<span id="cb80-8"><a href=""></a>duplicated_doi <span class="ot">&lt;-</span> <span class="fu">duplicated</span>(refs<span class="sc">$</span><span class="st">"doi"</span>)</span>
+<span id="cb80-9"><a href=""></a></span>
+<span id="cb80-10"><a href=""></a><span class="co"># Store information ----</span></span>
+<span id="cb80-11"><a href=""></a>refs<span class="sc">$</span><span class="st">"duplicated"</span> <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(duplicated_doi, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb80-12"><a href=""></a></span>
+<span id="cb80-13"><a href=""></a><span class="co"># Number of duplicates ----</span></span>
+<span id="cb80-14"><a href=""></a><span class="fu">sum</span>(duplicated_doi)</span>
+<span id="cb80-15"><a href=""></a></span>
+<span id="cb80-16"><a href=""></a><span class="do">## Export .xlsx file ----</span></span>
+<span id="cb80-17"><a href=""></a>writexl<span class="sc">::</span><span class="fu">write_xlsx</span>(refs, <span class="fu">file.path</span>(path, <span class="st">"unique_references.xlsx"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
 <div class="quarto-auto-generated-content">
 <p><img src="img/cesab-logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
