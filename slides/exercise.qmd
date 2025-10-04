@@ -1,61 +1,110 @@
-# {{< fa user-clock size=1x >}} &nbsp;&nbsp;Exercise
+# {{< fa feather size=1x >}} &nbsp;&nbsp;Wrap-up
 
-## Exercise
+## Wrap-up
 
 :::: {.columns}
+
+::: {.column width=20%}
+:::
 
 ::: {.column width=60%}
 ![](img/wrap-up.png)
 :::
 
-::: {.column width=40%}
+::: {.column width=20%}
 :::
 
 ::::
 
 
-## Exercise
+# {{< fa user-clock size=1x >}} &nbsp;&nbsp;Exercise
+
+
+## Exercise (w/ Zotero)
 
 :::: {.columns}
 
 ::: {.column}
-{{< fa circle-arrow-right >}} &nbsp;**Download the two following `.bib` files:**
+**1. Download the two following `.bib` files:**
   
   - `refs-scopus.bib` available [**here**](https://raw.githubusercontent.com/literaturesynthesis/corpus-management/main/data/refs-scopus.bib)
   - `refs-webofscience.bib` available [**here**](https://raw.githubusercontent.com/literaturesynthesis/corpus-management/main/data/refs-webofscience.bib)
-  
-{{< fa circle-arrow-right >}} &nbsp;**Import the two `.bib` files in Zotero**
+
+<br />
+
+**2. Import the two `.bib` files in Zotero**
 
   - Create a collection for this exercise
   - Import each `.bib` file in its own subcollection
 
-{{< fa circle-arrow-right >}} &nbsp;**Import references in R**
+<br />
+
+**3. Import references in R**
 
   - Install the package `zoteror` available [**here**](https://github.com/frbcesab/zoteror)
-  - Use the function `get_zotero_data()` to import Zotero references
+  - Use the function [`get_zotero_data()`](https://frbcesab.github.io/zoteror/reference/get_zotero_data.html) to import Zotero references
   - Select only references from the two collections
 :::
 
 :::{.column}
-{{< fa circle-arrow-right >}} &nbsp;**Detect duplicated references**
+**4. Detect duplicated references**
   
-  - Use the function `duplicated()` on the DOI to identify duplicated references
+  - Use the function [`duplicated()`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/duplicated) on the DOI to identify duplicated references
   - Add a column with `1` (duplicate) and `0` (no duplicate)
 
-{{< fa circle-arrow-right >}} &nbsp;**Export the final table**
+<br />
 
-  - Use the package [`writexl`](https://cran.r-project.org/package=writexl) to export the table as a `xlsx` file
+**5. Export the final table**
+
+  - Use the package [`writexl`](https://cran.r-project.org/package=writexl) to export the `data.frame` as a `xlsx` file
 :::
 
 ::::
 
-## Correction
+
+## Exercise (wo/ Zotero)
+
+:::: {.columns}
+
+::: {.column}
+**1. Download the two following `.bib` files:**
+  
+  - `refs-scopus.bib` available [**here**](https://raw.githubusercontent.com/literaturesynthesis/corpus-management/main/data/refs-scopus.bib)
+  - `refs-webofscience.bib` available [**here**](https://raw.githubusercontent.com/literaturesynthesis/corpus-management/main/data/refs-webofscience.bib)
+
+<br />
+
+**2. Import references in R**
+
+  - Install the package `rbibtools` available [**here**](https://github.com/frbcesab/rbibtools)
+  - Use the function [`read_bib()`](https://frbcesab.github.io/rbibtools/reference/read_bib.html) to import `.bib` files
+:::
+
+:::{.column}
+**3. Detect duplicated references**
+  
+  - Use the function [`duplicated()`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/duplicated) on the DOI to identify duplicated references
+  - Add a column with `1` (duplicate) and `0` (no duplicate)
+
+<br />
+
+**4. Export the final table**
+
+  - Use the package [`writexl`](https://cran.r-project.org/package=writexl) to export the `data.frame` as a `xlsx` file
+:::
+
+::::
+
+
+# 
+
+## Correction (w/Zotero)
 
 
 :::: {.columns}
 
 ::: {.column}
-**Data acquisition**
+**1. Reference acquisition**
 
 ```{r}
 #| echo: true
@@ -66,23 +115,26 @@ path <- "~/Documents/Exercise"
 dir.create(path, recursive = TRUE)
 
 # Download .bib files ----
-repo_url   <- paste0("https://raw.githubusercontent.com/", 
-                     "literaturesynthesis/", 
-                     "corpus-management/main/data/")
+repo_url <- paste0(
+  "https://raw.githubusercontent.com/",
+  "literaturesynthesis/",
+  "corpus-management/main/data/"
+)
 
 filename_1 <- "refs-scopus.bib"
-
-download.file(url      = paste0(repo_url, filename_1), 
-              destfile = file.path(path, filename_1))
-
 filename_2 <- "refs-webofscience.bib"
 
-download.file(url      = paste0(repo_url, filename_2), 
-              destfile = file.path(path, filename_2))
+download.file(
+  url = paste0(repo_url, filename_1),
+  destfile = file.path(path, filename_1)
+)
 
-# Zotero step ----
-## ...
+download.file(
+  url = paste0(repo_url, filename_2),
+  destfile = file.path(path, filename_2)
+)
 ```
+
 :::
 
 ::: {.column}
@@ -91,13 +143,13 @@ download.file(url      = paste0(repo_url, filename_2),
 ::::
 
 
+## Correction (w/Zotero)
 
-## Correction
 
 :::: {.columns}
 
 ::: {.column}
-**Data acquisition**
+**1. Reference acquisition**
 
 ```{r}
 #| echo: true
@@ -108,27 +160,97 @@ path <- "~/Documents/Exercise"
 dir.create(path, recursive = TRUE)
 
 # Download .bib files ----
-repo_url   <- paste0("https://raw.githubusercontent.com/", 
-                     "literaturesynthesis/", 
-                     "corpus-management/main/data/")
+repo_url <- paste0(
+  "https://raw.githubusercontent.com/",
+  "literaturesynthesis/",
+  "corpus-management/main/data/"
+)
 
 filename_1 <- "refs-scopus.bib"
-
-download.file(url      = paste0(repo_url, filename_1), 
-              destfile = file.path(path, filename_1))
-
 filename_2 <- "refs-webofscience.bib"
 
-download.file(url      = paste0(repo_url, filename_2), 
-              destfile = file.path(path, filename_2))
+download.file(
+  url = paste0(repo_url, filename_1),
+  destfile = file.path(path, filename_1)
+)
 
-# Zotero step ----
+download.file(
+  url = paste0(repo_url, filename_2),
+  destfile = file.path(path, filename_2)
+)
+```
+
+<br />
+
+**2. Reference storage**
+
+```{r}
+#| echo: true
+#| eval: false
+# On Zotero ----
 ## ...
 ```
+
 :::
 
 ::: {.column}
-**Data cleaning**
+:::
+
+::::
+
+
+## Correction (w/Zotero)
+
+
+:::: {.columns}
+
+::: {.column}
+**1. Reference acquisition**
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Folder to save .bib files ----
+path <- "~/Documents/Exercise"
+dir.create(path, recursive = TRUE)
+
+# Download .bib files ----
+repo_url <- paste0(
+  "https://raw.githubusercontent.com/",
+  "literaturesynthesis/",
+  "corpus-management/main/data/"
+)
+
+filename_1 <- "refs-scopus.bib"
+filename_2 <- "refs-webofscience.bib"
+
+download.file(
+  url = paste0(repo_url, filename_1),
+  destfile = file.path(path, filename_1)
+)
+
+download.file(
+  url = paste0(repo_url, filename_2),
+  destfile = file.path(path, filename_2)
+)
+```
+
+<br />
+
+**2. Reference storage**
+
+```{r}
+#| echo: true
+#| eval: false
+# On Zotero ----
+## ...
+```
+
+:::
+
+::: {.column}
+**3. Reference importation**
 
 ```{r}
 #| echo: true
@@ -138,6 +260,82 @@ refs <- zoteror::get_zotero_data(path = "~/zotero")
 
 # Select collections ----
 refs <- refs[refs$"collection" %in% c("WOS", "Scopus"), ]
+```
+
+:::
+::::
+
+
+## Correction (w/Zotero)
+
+
+:::: {.columns}
+
+::: {.column}
+**1. Reference acquisition**
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Folder to save .bib files ----
+path <- "~/Documents/Exercise"
+dir.create(path, recursive = TRUE)
+
+# Download .bib files ----
+repo_url <- paste0(
+  "https://raw.githubusercontent.com/",
+  "literaturesynthesis/",
+  "corpus-management/main/data/"
+)
+
+filename_1 <- "refs-scopus.bib"
+filename_2 <- "refs-webofscience.bib"
+
+download.file(
+  url = paste0(repo_url, filename_1),
+  destfile = file.path(path, filename_1)
+)
+
+download.file(
+  url = paste0(repo_url, filename_2),
+  destfile = file.path(path, filename_2)
+)
+```
+
+<br />
+
+**2. Reference storage**
+
+```{r}
+#| echo: true
+#| eval: false
+# On Zotero ----
+## ...
+```
+
+:::
+
+::: {.column}
+**3. Reference importation**
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Access references ----
+refs <- zoteror::get_zotero_data(path = "~/zotero")
+
+# Select collections ----
+refs <- refs[refs$"collection" %in% c("WOS", "Scopus"), ]
+```
+
+<br />
+
+**4. Reference deduplication**
+```{r}
+#| echo: true
+#| eval: false
 
 # Detect duplicates (based on DOI) ----
 duplicated_doi <- duplicated(refs$"doi")
@@ -147,11 +345,361 @@ refs$"duplicated" <- ifelse(duplicated_doi, 1, 0)
 
 # Number of duplicates ----
 sum(duplicated_doi)
+```
+
+:::
+::::
+
+
+## Correction (w/Zotero)
+
+
+:::: {.columns}
+
+::: {.column}
+**1. Reference acquisition**
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Folder to save .bib files ----
+path <- "~/Documents/Exercise"
+dir.create(path, recursive = TRUE)
+
+# Download .bib files ----
+repo_url <- paste0(
+  "https://raw.githubusercontent.com/",
+  "literaturesynthesis/",
+  "corpus-management/main/data/"
+)
+
+filename_1 <- "refs-scopus.bib"
+filename_2 <- "refs-webofscience.bib"
+
+download.file(
+  url = paste0(repo_url, filename_1),
+  destfile = file.path(path, filename_1)
+)
+
+download.file(
+  url = paste0(repo_url, filename_2),
+  destfile = file.path(path, filename_2)
+)
+```
+
+<br />
+
+**2. Reference storage**
+
+```{r}
+#| echo: true
+#| eval: false
+# On Zotero ----
+## ...
+```
+
+:::
+
+::: {.column}
+**3. Reference importation**
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Access references ----
+refs <- zoteror::get_zotero_data(path = "~/zotero")
+
+# Select collections ----
+refs <- refs[refs$"collection" %in% c("WOS", "Scopus"), ]
+```
+
+<br />
+
+**4. Reference deduplication**
+```{r}
+#| echo: true
+#| eval: false
+
+# Detect duplicates (based on DOI) ----
+duplicated_doi <- duplicated(refs$"doi")
+
+# Store information ----
+refs$"duplicated" <- ifelse(duplicated_doi, 1, 0)
+
+# Number of duplicates ----
+sum(duplicated_doi)
+```
+
+<br />
+
+**5. Reference exportation**
+```{r}
+#| echo: true
+#| eval: false
 
 ## Export .xlsx file ----
 writexl::write_xlsx(refs, file.path(path, "unique_references.xlsx"))
 ```
+
 :::
 
 ::::
 
+
+
+## Correction (wo/Zotero)
+
+
+:::: {.columns}
+
+::: {.column}
+**1. Reference acquisition**
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Folder to save .bib files ----
+path <- "~/Documents/Exercise"
+dir.create(path, recursive = TRUE)
+
+# Download .bib files ----
+repo_url <- paste0(
+  "https://raw.githubusercontent.com/",
+  "literaturesynthesis/",
+  "corpus-management/main/data/"
+)
+
+filename_1 <- "refs-scopus.bib"
+filename_2 <- "refs-webofscience.bib"
+
+download.file(
+  url = paste0(repo_url, filename_1),
+  destfile = file.path(path, filename_1)
+)
+
+download.file(
+  url = paste0(repo_url, filename_2),
+  destfile = file.path(path, filename_2)
+)
+```
+
+:::
+
+::: {.column}
+:::
+
+::::
+
+
+## Correction (wo/Zotero)
+
+
+:::: {.columns}
+
+::: {.column}
+**1. Reference acquisition**
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Folder to save .bib files ----
+path <- "~/Documents/Exercise"
+dir.create(path, recursive = TRUE)
+
+# Download .bib files ----
+repo_url <- paste0(
+  "https://raw.githubusercontent.com/",
+  "literaturesynthesis/",
+  "corpus-management/main/data/"
+)
+
+filename_1 <- "refs-scopus.bib"
+filename_2 <- "refs-webofscience.bib"
+
+download.file(
+  url = paste0(repo_url, filename_1),
+  destfile = file.path(path, filename_1)
+)
+
+download.file(
+  url = paste0(repo_url, filename_2),
+  destfile = file.path(path, filename_2)
+)
+```
+
+:::
+
+::: {.column}
+**2. Reference importation**
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Access references ----
+refs <- rbibtools::read_bib(path = path)
+```
+
+:::
+
+::::
+
+
+## Correction (wo/Zotero)
+
+
+:::: {.columns}
+
+::: {.column}
+**1. Reference acquisition**
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Folder to save .bib files ----
+path <- "~/Documents/Exercise"
+dir.create(path, recursive = TRUE)
+
+# Download .bib files ----
+repo_url <- paste0(
+  "https://raw.githubusercontent.com/",
+  "literaturesynthesis/",
+  "corpus-management/main/data/"
+)
+
+filename_1 <- "refs-scopus.bib"
+filename_2 <- "refs-webofscience.bib"
+
+download.file(
+  url = paste0(repo_url, filename_1),
+  destfile = file.path(path, filename_1)
+)
+
+download.file(
+  url = paste0(repo_url, filename_2),
+  destfile = file.path(path, filename_2)
+)
+```
+
+:::
+
+::: {.column}
+**2. Reference importation**
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Access references ----
+refs <- rbibtools::read_bib(path = path)
+```
+
+<br />
+
+**3. Reference deduplication**
+```{r}
+#| echo: true
+#| eval: false
+
+# Detect duplicates (based on DOI) ----
+duplicated_doi <- duplicated(refs$"doi")
+
+# Store information ----
+refs$"duplicated" <- ifelse(duplicated_doi, 1, 0)
+
+# Number of duplicates ----
+sum(duplicated_doi)
+```
+
+:::
+
+::::
+
+
+## Correction (wo/Zotero)
+
+
+:::: {.columns}
+
+::: {.column}
+**1. Reference acquisition**
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Folder to save .bib files ----
+path <- "~/Documents/Exercise"
+dir.create(path, recursive = TRUE)
+
+# Download .bib files ----
+repo_url <- paste0(
+  "https://raw.githubusercontent.com/",
+  "literaturesynthesis/",
+  "corpus-management/main/data/"
+)
+
+filename_1 <- "refs-scopus.bib"
+filename_2 <- "refs-webofscience.bib"
+
+download.file(
+  url = paste0(repo_url, filename_1),
+  destfile = file.path(path, filename_1)
+)
+
+download.file(
+  url = paste0(repo_url, filename_2),
+  destfile = file.path(path, filename_2)
+)
+```
+
+:::
+
+::: {.column}
+**2. Reference importation**
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Access references ----
+refs <- rbibtools::read_bib(path = path)
+```
+
+<br />
+
+**3. Reference deduplication**
+```{r}
+#| echo: true
+#| eval: false
+
+# Detect duplicates (based on DOI) ----
+duplicated_doi <- duplicated(refs$"doi")
+
+# Store information ----
+refs$"duplicated" <- ifelse(duplicated_doi, 1, 0)
+
+# Number of duplicates ----
+sum(duplicated_doi)
+```
+
+
+<br />
+
+**4. Reference exportation**
+```{r}
+#| echo: true
+#| eval: false
+
+## Export .xlsx file ----
+writexl::write_xlsx(refs, file.path(path, "unique_references.xlsx"))
+```
+
+:::
+
+::::
