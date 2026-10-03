@@ -306,8 +306,8 @@ Installation:
 #| echo: true
 
 # Installation ----
-install.packages("remotes")
-remotes::install_github("frbcesab/rwosstarter")
+install.packages("pak")
+pak::pak("frbcesab/rwosstarter")
 ```
 :::
 
@@ -328,8 +328,8 @@ Installation:
 #| echo: true
 
 # Installation ----
-install.packages("remotes")
-remotes::install_github("frbcesab/rwosstarter")
+install.packages("pak")
+pak::pak("frbcesab/rwosstarter")
 ```
 :::
 

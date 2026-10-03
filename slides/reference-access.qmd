@@ -97,8 +97,8 @@ Installation:
 #| echo: true
 
 # Installation ----
-install.packages("remotes")
-remotes::install_github("frbcesab/rbibtools")
+install.packages("pak")
+pak::pak("frbcesab/rbibtools")
 ```
 :::
 
@@ -151,8 +151,8 @@ Installation:
 #| echo: true
 
 # Installation ----
-install.packages("remotes")
-remotes::install_github("frbcesab/zoteror")
+install.packages("pak")
+pak::pak("frbcesab/zoteror")
 ```
 :::
 

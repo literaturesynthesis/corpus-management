@@ -60,7 +60,7 @@ Installation:
 #| echo: true
 
 # Installation ----
-install.packages("openalexR")
+pak::pak("openalexR")
 ```
 :::
 
@@ -75,8 +75,10 @@ Usage:
 options(openalexR.mailto = "anonymous@mail.com")
 
 # DOI to search for ----
-dois <- c("10.1371/journal.pbio.3001640", 
-          "10.1038/s41597-023-02264-2")
+dois <- c(
+  "10.1371/journal.pbio.3001640", 
+  "10.1038/s41597-023-02264-2"
+)
 
 # Retrieve document metadata ----
 metadata <- openalexR::oa_fetch(entity = "works", doi = dois)

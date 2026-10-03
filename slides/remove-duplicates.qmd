@@ -36,11 +36,13 @@ Let's keep it simple:
 
 # Create dataset ----
 refs <- data.frame(
-  "title" = c("Climate change and biodiversity", 
-              "Climate change and biodiversity",
-              "Climate change and biodiversity",
-              "Fisheries and management - Part I", 
-              "Fisheries and management - Part II"))
+  title = c(
+    "Climate change and biodiversity", 
+    "Climate change and biodiversity",
+    "Climate change and biodiversity"
+  )
+)
+
 refs
 ```
 :::
@@ -65,13 +67,16 @@ refs
 
 # Create dataset ----
 refs <- data.frame(
-  "title" = c("Climate change and biodiversity", 
-              "Climate change and biodiversity",
-              "Climate change and biodiversity",
-              "Fisheries and management - Part I", 
-              "Fisheries and management - Part II"))
+  title = c(
+    "Climate change and biodiversity", 
+    "Climate change and biodiversity",
+    "Climate change and biodiversity"
+  )
+)
+
 refs
 ```
+
 
 <br>
 
@@ -80,8 +85,7 @@ refs
 #| eval: true
 
 # Detect duplicates ----
-dups <- duplicated(refs$"title")
-dups
+(dups <- duplicated(refs$"title"))
 ```
 :::
 
@@ -105,11 +109,13 @@ dups
 
 # Create dataset ----
 refs <- data.frame(
-  "title" = c("Climate change and biodiversity", 
-              "Climate change and biodiversity",
-              "Climate change and biodiversity",
-              "Fisheries and management - Part I", 
-              "Fisheries and management - Part II"))
+  title = c(
+    "Climate change and biodiversity", 
+    "Climate change and biodiversity",
+    "Climate change and biodiversity"
+  )
+)
+
 refs
 ```
 
@@ -120,8 +126,7 @@ refs
 #| eval: true
 
 # Detect duplicates ----
-dups <- duplicated(refs$"title")
-dups
+(dups <- duplicated(refs$"title"))
 ```
 
 <br>
@@ -156,9 +161,12 @@ refs
 
 # Create dataset ----
 refs <- data.frame(
-  "title" = c("Climate change", 
-              "CLIMATE CHANGE",
-              "Climate- change."))
+  title = c(
+    "Climate change", 
+    "CLIMATE CHANGE",
+    "Climate- change."
+  )
+)
 ```
 
 <br>
@@ -185,9 +193,12 @@ refs <- data.frame(
 
 # Create dataset ----
 refs <- data.frame(
-  "title" = c("Climate change", 
-              "CLIMATE CHANGE",
-              "Climate- change."))
+  title = c(
+    "Climate change", 
+    "CLIMATE CHANGE",
+    "Climate- change."
+  )
+)
 ```
 
 <br>
@@ -225,9 +236,12 @@ refs
 
 # Create dataset ----
 refs <- data.frame(
-  "title" = c("Climate change", 
-              "CLIMATE CHANGE",
-              "Climate- change."))
+  title = c(
+    "Climate change", 
+    "CLIMATE CHANGE",
+    "Climate- change."
+  )
+)
 ```
 
 <br>
@@ -273,9 +287,12 @@ refs
 
 # Create dataset ----
 refs <- data.frame(
-  "title" = c("Climate change", 
-              "CLIMATE CHANGE",
-              "Climate- change."))
+  title = c(
+    "Climate change", 
+    "CLIMATE CHANGE",
+    "Climate- change."
+  )
+)
 ```
 
 <br>
@@ -330,9 +347,12 @@ refs
 
 # Create dataset ----
 refs <- data.frame(
-  "title" = c("Climate change", 
-              "CLIMATE CHANGE",
-              "Climate- change."))
+  title = c(
+    "Climate change", 
+    "CLIMATE CHANGE",
+    "Climate- change."
+  )
+)
 ```
 
 <br>
@@ -395,9 +415,12 @@ refs
 
 # Create dataset ----
 refs <- data.frame(
-  "title" = c("Climate change", 
-              "CLIMATE CHANGE",
-              "Climate- change."))
+  title = c(
+    "Climate change", 
+    "CLIMATE CHANGE",
+    "Climate- change."
+  )
+)
 ```
 
 <br>
@@ -468,9 +491,12 @@ refs
 
 # Create dataset ----
 refs <- data.frame(
-  "title" = c("Climate change", 
-              "CLIMATE CHANGE",
-              "Climate- change."))
+  title = c(
+    "Climate change", 
+    "CLIMATE CHANGE",
+    "Climate- change."
+  )
+)
 ```
 
 <br>
